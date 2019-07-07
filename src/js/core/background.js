@@ -76,7 +76,8 @@ const kodb = {
   collectBookmark (bookmark) {
     // we only collect bookmarks, no folders or seperators
     if (bookmark.type === 'bookmark') {
-      kodb.collectedBookmarks.push(bookmark);
+      const { id, title, url } = bookmark;
+      kodb.collectedBookmarks.push({ id, title, url });
     }
 
     if (bookmark.children) {
