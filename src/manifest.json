@@ -19,6 +19,7 @@
     "default_title": "__MSG_extension_name__"
   },
   "permissions": [
+    "bookmarks",
     "tabs"
   ],
   "default_locale": "en",

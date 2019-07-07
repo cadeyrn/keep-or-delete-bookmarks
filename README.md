@@ -33,6 +33,11 @@ Keep or Delete Bookmarks needs several permissions to work properly.
 The permission to access the browser tabs is needed so that Keep or Delete Bookmarks can jump to the already opened
 user interface if the user interface is already opened in another tab and you click the button in the browser's toolbar.
 
+##### read and modify bookmarks
+
+You installed Keep or Delete Bookmarks to show and remove bookmarks so it should be clear why the permission is needed
+to read and modify your bookmarks.
+
 #### silent permissions
 
 Keep or Delete Bookmarks needs some more permissions, but Firefox does not prompt for the following permissions:
