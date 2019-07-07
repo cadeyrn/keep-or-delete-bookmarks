@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_extension_name__",
+  "version": "0.1.0",
+  "description": "__MSG_extension_description__",
+  "icons": {
+    "48": "images/icon.svg"
+  },
+  "developer": {
+    "name": "Sören Hentzschel",
+    "url": "https://www.soeren-hentzschel.at/firefox-webextensions/keep-or-delete-bookmarks/?utm_campaign=webext&utm_term=keep-or-delete-bookmarks"
+  },
+  "default_locale": "en",
+  "applications": {
+    "gecko": {
+      "id": "keep-or-delete-bookmarks@agenedia.com",
+      "strict_min_version": "68.0"
+    }
+  }
+}
