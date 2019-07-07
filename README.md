@@ -28,7 +28,10 @@ Keep or Delete Bookmarks needs several permissions to work properly.
 
 #### mandatory permissions
 
-TBD
+##### access browser tabs
+
+The permission to access the browser tabs is needed so that Keep or Delete Bookmarks can jump to the already opened
+user interface if the user interface is already opened in another tab and you click the button in the browser's toolbar.
 
 #### silent permissions
 
