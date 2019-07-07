@@ -85,6 +85,10 @@ const kodb = {
         kodb.collectBookmark(child);
       }
     }
+  },
+
+  findById (id) {
+    return kodb.collectedBookmarks.filter((bookmark) => bookmark.id === id)[0];
   }
 };
 
