@@ -55,9 +55,9 @@ const kodb = {
    *
    * @returns {void}
    */
-  handleResponse (response) {
+  async handleResponse (response) {
     if (response.message === 'collect') {
-      kodb.collectAllBookmarks();
+      await kodb.collectAllBookmarks();
 
       browser.runtime.sendMessage({ message : 'random-bookmark', bookmark : kodb.getRandomBookmark() });
     }
@@ -102,9 +102,13 @@ const kodb = {
   async collectAllBookmarks () {
     const bookmarks = await browser.bookmarks.getTree();
 
-    kodb.collectedBookmarks = [];
-    kodb.calculateBookmarkPaths(bookmarks[0], []);
-    kodb.collectBookmark(bookmarks[0]);
+    return new Promise((resolve) => {
+      kodb.collectedBookmarks = [];
+      kodb.calculateBookmarkPaths(bookmarks[0], []);
+      kodb.collectBookmark(bookmarks[0]);
+
+      resolve();
+    });
   },
 
   /**
