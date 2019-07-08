@@ -137,6 +137,15 @@ const kodb = {
    */
   findById (id) {
     return kodb.collectedBookmarks.filter((bookmark) => bookmark.id === id)[0];
+  },
+
+  /**
+   * This method returns a random bookmark.
+   *
+   * @returns {bookmarks.BookmarkTreeNode} bookmark - a single bookmark
+   */
+  getRandomBookmark () {
+    return kodb.collectedBookmarks[Math.floor(Math.random() * kodb.collectedBookmarks.length)];
   }
 };
 
