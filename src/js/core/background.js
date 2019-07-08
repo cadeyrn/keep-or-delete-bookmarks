@@ -58,16 +58,13 @@ const kodb = {
   async handleResponse (response) {
     if (response.message === 'collect') {
       await kodb.collectAllBookmarks();
-
-      browser.runtime.sendMessage({ message : 'random-bookmark', bookmark : kodb.getRandomBookmark() });
+      kodb.showNextBookmark();
     }
     else if (response.message === 'delete') {
       browser.bookmarks.remove(response.bookmarkId);
 
-      kodb.collectedBookmarks.splice(kodb.getIndexById(response.bookmarkId), 1);
-      delete kodb.additionalData[response.bookmarkId];
-
-      browser.runtime.sendMessage({ message : 'random-bookmark', bookmark : kodb.getRandomBookmark() });
+      kodb.removeFromCollectedBookmarks(response.bookmarkId);
+      kodb.showNextBookmark();
     }
   },
 
@@ -165,12 +162,18 @@ const kodb = {
   },
 
   /**
-   * This method returns a random bookmark.
+   * This method changes the random bookmark in the UI.
    *
    * @returns {bookmarks.BookmarkTreeNode} bookmark - a single bookmark
    */
-  getRandomBookmark () {
-    return kodb.collectedBookmarks[Math.floor(Math.random() * kodb.collectedBookmarks.length)];
+  showNextBookmark () {
+    const bookmark = kodb.collectedBookmarks[Math.floor(Math.random() * kodb.collectedBookmarks.length)];
+    browser.runtime.sendMessage({ message : 'random-bookmark', bookmark : bookmark });
+  },
+
+  removeFromCollectedBookmarks (id) {
+    kodb.collectedBookmarks.splice(kodb.getIndexById(id), 1);
+    delete kodb.additionalData[id];
   }
 };
 
