@@ -63,6 +63,7 @@ const kodb = {
     }
     else if (response.message === 'delete') {
       browser.bookmarks.remove(response.bookmarkId);
+      browser.runtime.sendMessage({ message : 'random-bookmark', bookmark : kodb.getRandomBookmark() });
     }
   },
 

@@ -34,6 +34,10 @@ const ui = {
       elBookmarkTitle.textContent = response.bookmark.title;
       elBookmarkPath.textContent = response.bookmark.path.join(' / ');
 
+      if (elBookmarkUrl.firstChild) {
+        elBookmarkUrl.removeChild(elBookmarkUrl.firstChild);
+      }
+
       if (pattern.test(encodeURI(response.bookmark.url))) {
         const elUrl = document.createElement('a');
         elUrl.setAttribute('href', response.bookmark.url);
