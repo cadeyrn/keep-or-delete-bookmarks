@@ -50,7 +50,7 @@ Keep or Delete Bookmarks requires at least Firefox 68.
 
 ## Download
 
-[Download Enterprise Policy Generator](https://addons.mozilla.org/en-US/firefox/addon/keep-or-delete-bookmarks/)
+[Download Keep or Delete Bookmarks](https://addons.mozilla.org/en-US/firefox/addon/keep-or-delete-bookmarks/)
 
 ## Release Notes
 
