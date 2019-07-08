@@ -80,6 +80,9 @@ const ui = {
         case 'delete':
           ui.deleteBookmark(elBookmarkId.textContent);
           break;
+        case 'keep':
+          ui.keepBookmark(elBookmarkId.textContent);
+          break;
         default:
         // do nothing
       }
@@ -96,6 +99,20 @@ const ui = {
   deleteBookmark (bookmarkId) {
     browser.runtime.sendMessage({
       message : 'delete',
+      bookmarkId : bookmarkId
+    });
+  },
+
+  /**
+   * This method is used to keep a bookmark.
+   *
+   * @param {string} bookmarkId - the id of the bookmark
+   *
+   * @returns {void}
+   */
+  keepBookmark (bookmarkId) {
+    browser.runtime.sendMessage({
+      message : 'keep',
       bookmarkId : bookmarkId
     });
   }

@@ -66,6 +66,10 @@ const kodb = {
       kodb.removeFromCollectedBookmarks(response.bookmarkId);
       kodb.showNextBookmark();
     }
+    else if (response.message === 'keep') {
+      kodb.removeFromCollectedBookmarks(response.bookmarkId);
+      kodb.showNextBookmark();
+    }
   },
 
   /**
