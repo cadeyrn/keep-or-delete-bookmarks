@@ -58,6 +58,8 @@ const kodb = {
   handleResponse (response) {
     if (response.message === 'collect') {
       kodb.collectAllBookmarks();
+
+      browser.runtime.sendMessage({ message : 'random-bookmark', bookmark : kodb.getRandomBookmark() });
     }
   },
 
