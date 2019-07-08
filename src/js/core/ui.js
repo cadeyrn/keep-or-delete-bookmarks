@@ -1,5 +1,6 @@
 'use strict';
 
+const elBookmarkId = document.getElementById('bookmark-id');
 const elBookmarkPath = document.getElementById('bookmark-path');
 const elBookmarkUrl = document.getElementById('bookmark-url');
 const elBookmarkTitle = document.getElementById('bookmark-title');
@@ -28,6 +29,7 @@ const ui = {
     if (response.message === 'random-bookmark') {
       const pattern = new RegExp(/^https?:\/\//, 'gi');
 
+      elBookmarkId.textContent = response.bookmark.id;
       elBookmarkTitle.textContent = response.bookmark.title;
       elBookmarkPath.textContent = response.bookmark.path.join(' / ');
 
