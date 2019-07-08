@@ -16,19 +16,19 @@ button.circle-btn {
   transition: background ease 250ms;
 }
 
-button.circle-btn.delete {
+button.circle-btn[data-action='delete'] {
   background-color: rgb(215, 0, 34);
 }
 
-button.circle-btn.delete:hover {
+button.circle-btn[data-action='delete']:hover {
   background-color: rgb(235, 20, 54);
 }
 
-button.circle-btn.keep {
+button.circle-btn[data-action='keep'] {
   background-color: rgb(5, 139, 0);
 }
 
-button.circle-btn.keep:hover {
+button.circle-btn[data-action='keep']:hover {
   background-color: rgb(25, 159, 20);
 }
 
