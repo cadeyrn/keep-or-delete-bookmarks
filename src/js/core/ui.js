@@ -1,10 +1,13 @@
 'use strict';
 
 const elBody = document.querySelector('body');
+const elBookmarkCard = document.getElementById('bookmark-card');
 const elBookmarkId = document.getElementById('bookmark-id');
 const elBookmarkPath = document.getElementById('bookmark-path');
 const elBookmarkUrl = document.getElementById('bookmark-url');
 const elBookmarkTitle = document.getElementById('bookmark-title');
+const elButtonWrapper = document.getElementById('button-wrapper');
+const elEmptyState = document.getElementById('empty-state');
 
 /**
  * @exports ui
@@ -28,26 +31,36 @@ const ui = {
    */
   handleResponse (response) {
     if (response.message === 'random-bookmark') {
-      const pattern = new RegExp(/^https?:\/\//, 'gi');
+      if (response.bookmark) {
+        const pattern = new RegExp(/^https?:\/\//, 'gi');
 
-      elBookmarkId.textContent = response.bookmark.id;
-      elBookmarkTitle.textContent = response.bookmark.title;
-      elBookmarkPath.textContent = response.bookmark.path.join(' / ');
+        elBookmarkCard.removeAttribute('hidden');
+        elButtonWrapper.removeAttribute('hidden');
+        elEmptyState.setAttribute('hidden', true);
+        elBookmarkId.textContent = response.bookmark.id;
+        elBookmarkTitle.textContent = response.bookmark.title;
+        elBookmarkPath.textContent = response.bookmark.path.join(' / ');
 
-      if (elBookmarkUrl.firstChild) {
-        elBookmarkUrl.removeChild(elBookmarkUrl.firstChild);
-      }
+        if (elBookmarkUrl.firstChild) {
+          elBookmarkUrl.removeChild(elBookmarkUrl.firstChild);
+        }
 
-      if (pattern.test(encodeURI(response.bookmark.url))) {
-        const elUrl = document.createElement('a');
-        elUrl.setAttribute('href', response.bookmark.url);
-        elUrl.setAttribute('target', '_blank');
-        elUrl.setAttribute('rel', 'noopener');
-        elUrl.textContent = response.bookmark.url;
-        elBookmarkUrl.appendChild(elUrl);
+        if (pattern.test(encodeURI(response.bookmark.url))) {
+          const elUrl = document.createElement('a');
+          elUrl.setAttribute('href', response.bookmark.url);
+          elUrl.setAttribute('target', '_blank');
+          elUrl.setAttribute('rel', 'noopener');
+          elUrl.textContent = response.bookmark.url;
+          elBookmarkUrl.appendChild(elUrl);
+        }
+        else {
+          elBookmarkUrl.textContent = response.bookmark.url;
+        }
       }
       else {
-        elBookmarkUrl.textContent = response.bookmark.url;
+        elBookmarkCard.setAttribute('hidden', true);
+        elButtonWrapper.setAttribute('hidden', true);
+        elEmptyState.removeAttribute('hidden');
       }
     }
   },

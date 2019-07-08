@@ -1,4 +1,7 @@
 {
+  "bookmarks_empty_state": {
+    "message": "No bookmarks found."
+  },
   "extension_description": {
     "message": "Keep or Delete Bookmarks."
   },

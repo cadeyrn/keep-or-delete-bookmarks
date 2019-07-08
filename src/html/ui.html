@@ -9,13 +9,14 @@
 <body>
   <div id="bookmark-card-wrapper">
     <div>
-      <div id="bookmark-card">
+      <div id="empty-state" data-i18n="bookmarks_empty_state" hidden></div>
+      <div id="bookmark-card" hidden>
         <div id="bookmark-id"></div>
         <div id="bookmark-title"></div>
         <div id="bookmark-url"></div>
         <div id="bookmark-path"></div>
       </div>
-      <div id="button-wrapper">
+      <div id="button-wrapper" hidden>
         <button class="circle-btn delete" data-action="delete"></button>
         <button class="circle-btn keep" data-action="delete"></button>
       </div>

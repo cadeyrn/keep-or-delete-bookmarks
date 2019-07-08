@@ -1,4 +1,7 @@
 {
+  "bookmarks_empty_state": {
+    "message": "Keine Lesezeichen gefunden."
+  },
   "extension_description": {
     "message": "Keep or Delete Bookmarks."
   },
