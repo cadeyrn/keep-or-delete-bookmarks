@@ -63,6 +63,10 @@ const kodb = {
     }
     else if (response.message === 'delete') {
       browser.bookmarks.remove(response.bookmarkId);
+
+      kodb.collectedBookmarks.splice(kodb.getIndexById(response.bookmarkId), 1);
+      delete kodb.additionalData[response.bookmarkId];
+
       browser.runtime.sendMessage({ message : 'random-bookmark', bookmark : kodb.getRandomBookmark() });
     }
   },
@@ -147,6 +151,17 @@ const kodb = {
    */
   findById (id) {
     return kodb.collectedBookmarks.filter((bookmark) => bookmark.id === id)[0];
+  },
+
+  /**
+   * This method finds the index of a bookmark in the array of collected bookmarks.
+   *
+   * @param {string} id - the ID of the bookmark
+   *
+   * @returns {int} - the index in the array
+   */
+  getIndexById (id) {
+    return kodb.collectedBookmarks.findIndex((bookmark) => bookmark.id === id);
   },
 
   /**
