@@ -1,5 +1,6 @@
 'use strict';
 
+const elBody = document.querySelector('body');
 const elBookmarkId = document.getElementById('bookmark-id');
 const elBookmarkPath = document.getElementById('bookmark-path');
 const elBookmarkUrl = document.getElementById('bookmark-url');
@@ -45,9 +46,45 @@ const ui = {
         elBookmarkUrl.textContent = response.bookmark.url;
       }
     }
+  },
+
+  /**
+   * Fired when one of the buttons is clicked.
+   *
+   * @param {MouseEvent} e - event
+   *
+   * @returns {void}
+   */
+  handleActionButtonClicks (e) {
+    if (e.target.getAttribute('data-action')) {
+      e.preventDefault();
+
+      switch (e.target.getAttribute('data-action')) {
+        case 'delete':
+          ui.deleteBookmark(elBookmarkId.textContent);
+          break;
+        default:
+        // do nothing
+      }
+    }
+  },
+
+  /**
+   * This method is used to delete a bookmark.
+   *
+   * @param {string} bookmarkId - the id of the bookmark
+   *
+   * @returns {void}
+   */
+  deleteBookmark (bookmarkId) {
+    browser.runtime.sendMessage({
+      message : 'delete',
+      bookmarkId : bookmarkId
+    });
   }
 };
 
 document.addEventListener('DOMContentLoaded', ui.init);
+elBody.addEventListener('click', ui.handleActionButtonClicks);
 
 browser.runtime.onMessage.addListener(ui.handleResponse);

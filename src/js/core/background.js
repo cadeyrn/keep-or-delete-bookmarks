@@ -61,6 +61,9 @@ const kodb = {
 
       browser.runtime.sendMessage({ message : 'random-bookmark', bookmark : kodb.getRandomBookmark() });
     }
+    else if (response.message === 'delete') {
+      browser.bookmarks.remove(response.bookmarkId);
+    }
   },
 
   /**
