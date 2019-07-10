@@ -206,6 +206,22 @@ const kodb = {
   removeFromCollectedBookmarks (id) {
     kodb.collectedBookmarks.splice(kodb.getIndexById(id), 1);
     delete kodb.additionalData[id];
+  },
+
+  /**
+   * Adds a bookmark to the whitelist.
+   *
+   * @param {integer} id - the id of the bookmark
+   *
+   * @returns {void}
+   */
+  async addToWhitelist (id) {
+    const { whitelist } = await browser.storage.local.get({ whitelist : [] });
+
+    if (!whitelist.includes(id)) {
+      whitelist.push(id);
+      browser.storage.local.set({ whitelist : whitelist });
+    }
   }
 };
 

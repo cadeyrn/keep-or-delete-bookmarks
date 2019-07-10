@@ -40,9 +40,11 @@ to read and modify your bookmarks.
 
 #### silent permissions
 
-Keep or Delete Bookmarks needs some more permissions, but Firefox does not prompt for the following permissions:
+Keep or Delete Bookmarks needs one more permissions, but Firefox does not prompt for the following permission:
 
-TBD
+##### storage
+
+The storage permission is needed so that Keep or Delete Bookmarks can remember which bookmarks you want to keep.
 
 ## Compatibility
 
