@@ -28,13 +28,6 @@ const kodb = {
   additionalData : [],
 
   /**
-   * The bookmark that is currently being displayed.
-   *
-   * @type {bookmarks.BookmarkTreeNode}
-   */
-  currentBookmark : null,
-
-  /**
    * Fired when the toolbar icon is clicked. This method is used to open the user interface in a new tab or to switch
    * to the tab with the user interface if the user interface is already opened.
    *
