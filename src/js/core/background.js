@@ -70,6 +70,9 @@ const kodb = {
       kodb.removeFromCollectedBookmarks(response.id);
       kodb.showNextBookmark();
     }
+    else if (response.message === 'skip') {
+      kodb.showNextBookmark();
+    }
   },
 
   /**

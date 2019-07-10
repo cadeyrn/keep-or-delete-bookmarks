@@ -83,6 +83,9 @@ const ui = {
         case 'keep':
           ui.keepBookmark(elBookmarkId.textContent);
           break;
+        case 'skip':
+          ui.skipBookmark(elBookmarkId.textContent);
+          break;
         default:
         // do nothing
       }
@@ -113,6 +116,20 @@ const ui = {
   keepBookmark (id) {
     browser.runtime.sendMessage({
       message : 'keep',
+      id : id
+    });
+  },
+
+  /**
+   * This method is used to skip a bookmark.
+   *
+   * @param {string} id - the id of the bookmark
+   *
+   * @returns {void}
+   */
+  skipBookmark (id) {
+    browser.runtime.sendMessage({
+      message : 'skip',
       id : id
     });
   }

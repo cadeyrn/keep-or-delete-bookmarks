@@ -32,6 +32,14 @@ button.circle-btn[data-action='keep']:hover {
   background-color: rgb(25, 159, 20);
 }
 
+button.circle-btn[data-action='skip'] {
+  background-color: rgb(200, 200, 200);
+}
+
+button.circle-btn[data-action='skip']:hover {
+  background-color: rgb(220, 220, 220);
+}
+
 #button-wrapper {
   margin-top: 50px;
   text-align: center;
