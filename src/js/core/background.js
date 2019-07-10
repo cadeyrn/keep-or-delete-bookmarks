@@ -189,11 +189,21 @@ const kodb = {
    */
   showNextBookmark (id) {
     const { length } = kodb.collectedBookmarks;
-    let nextBookmark = id;
+    let nextBookmarkId = id;
+    let nextBookmark = null;
 
-    while (id === nextBookmark) {
-      const idx = Math.floor(Math.random() * length);
-      nextBookmark = kodb.collectedBookmarks[idx];
+    if (length > 1) {
+      while (id === nextBookmarkId) {
+        const idx = Math.floor(Math.random() * length);
+        nextBookmark = kodb.collectedBookmarks[idx];
+
+        if (nextBookmark) {
+          nextBookmarkId = nextBookmark.id;
+        }
+      }
+    }
+    else {
+      nextBookmark = kodb.collectedBookmarks[0];
     }
 
     browser.runtime.sendMessage({ message : 'random-bookmark', bookmark : nextBookmark });
