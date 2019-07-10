@@ -92,28 +92,28 @@ const ui = {
   /**
    * This method is used to delete a bookmark.
    *
-   * @param {string} bookmarkId - the id of the bookmark
+   * @param {string} id - the id of the bookmark
    *
    * @returns {void}
    */
-  deleteBookmark (bookmarkId) {
+  deleteBookmark (id) {
     browser.runtime.sendMessage({
       message : 'delete',
-      bookmarkId : bookmarkId
+      id : id
     });
   },
 
   /**
    * This method is used to keep a bookmark.
    *
-   * @param {string} bookmarkId - the id of the bookmark
+   * @param {string} id - the id of the bookmark
    *
    * @returns {void}
    */
-  keepBookmark (bookmarkId) {
+  keepBookmark (id) {
     browser.runtime.sendMessage({
       message : 'keep',
-      bookmarkId : bookmarkId
+      id : id
     });
   }
 };

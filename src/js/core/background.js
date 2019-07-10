@@ -61,13 +61,13 @@ const kodb = {
       kodb.showNextBookmark();
     }
     else if (response.message === 'delete') {
-      browser.bookmarks.remove(response.bookmarkId);
+      browser.bookmarks.remove(response.id);
 
-      kodb.removeFromCollectedBookmarks(response.bookmarkId);
+      kodb.removeFromCollectedBookmarks(response.id);
       kodb.showNextBookmark();
     }
     else if (response.message === 'keep') {
-      kodb.removeFromCollectedBookmarks(response.bookmarkId);
+      kodb.removeFromCollectedBookmarks(response.id);
       kodb.showNextBookmark();
     }
   },
@@ -76,9 +76,9 @@ const kodb = {
    * Calculates the full path of bookmarks.
    *
    * @param {bookmarks.BookmarkTreeNode} bookmark - a single bookmark
-   * @param {Array.<string>} path - an array with parts of the path of the bookmark
+   * @param {Array.<string>} path - an array with parts of the bookmark path
    *
-   * @returns {Array.<string>} - An array with the full path of all bookmarks
+   * @returns {Array.<string>} - an array with the full path of all bookmarks
    */
   calculateBookmarkPaths (bookmark, path) {
     if (bookmark.title) {
@@ -106,7 +106,7 @@ const kodb = {
   /**
    * This method is used to start collecting all bookmarks.
    *
-   * @returns {void}
+   * @returns {Promise} - resolves after completion
    */
   async collectAllBookmarks () {
     const bookmarks = await browser.bookmarks.getTree();
@@ -148,7 +148,7 @@ const kodb = {
    *
    * @param {string} id - the ID of the bookmark
    *
-   * @returns {bookmarks.BookmarkTreeNode} bookmark - a single bookmark
+   * @returns {bookmarks.BookmarkTreeNode} - a single bookmark
    */
   findById (id) {
     return kodb.collectedBookmarks.filter((bookmark) => bookmark.id === id)[0];
@@ -168,13 +168,20 @@ const kodb = {
   /**
    * This method changes the random bookmark in the UI.
    *
-   * @returns {bookmarks.BookmarkTreeNode} bookmark - a single bookmark
+   * @returns {bookmarks.BookmarkTreeNode} - a single bookmark
    */
   showNextBookmark () {
     const bookmark = kodb.collectedBookmarks[Math.floor(Math.random() * kodb.collectedBookmarks.length)];
     browser.runtime.sendMessage({ message : 'random-bookmark', bookmark : bookmark });
   },
 
+  /**
+   * This method removes a bookmark from the collected bookmarks array.
+   *
+   * @param {string} id - the ID of the bookmark
+   *
+   * @returns {void}
+   */
   removeFromCollectedBookmarks (id) {
     kodb.collectedBookmarks.splice(kodb.getIndexById(id), 1);
     delete kodb.additionalData[id];
