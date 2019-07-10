@@ -71,14 +71,15 @@ const kodb = {
       browser.bookmarks.remove(response.id);
 
       kodb.removeFromCollectedBookmarks(response.id);
-      kodb.showNextBookmark();
+      kodb.showNextBookmark(response.id);
     }
     else if (response.message === 'keep') {
+      kodb.addToWhitelist(response.id);
       kodb.removeFromCollectedBookmarks(response.id);
-      kodb.showNextBookmark();
+      kodb.showNextBookmark(response.id);
     }
     else if (response.message === 'skip') {
-      kodb.showNextBookmark();
+      kodb.showNextBookmark(response.id);
     }
   },
 
@@ -179,20 +180,20 @@ const kodb = {
    * This method changes the bookmark that will be displayed next and makes sure that the same bookmark is never
    * displayed twice in a row.
    *
-   * @returns {bookmarks.BookmarkTreeNode} - a single bookmark
+   * @param {string} id - the ID of the bookmark
+   *
+   * @returns {void}
    */
-  showNextBookmark () {
+  showNextBookmark (id) {
     const { length } = kodb.collectedBookmarks;
-    let nextBookmark = kodb.currentBookmark;
+    let nextBookmark = id;
 
-    while (nextBookmark === kodb.currentBookmark) {
-      nextBookmark = Math.floor(Math.random() * length);
+    while (id === nextBookmark) {
+      let idx = Math.floor(Math.random() * length);
+      nextBookmark = kodb.collectedBookmarks[idx];
     }
 
-    kodb.currentBookmark = nextBookmark;
-
-    const bookmark = kodb.collectedBookmarks[nextBookmark];
-    browser.runtime.sendMessage({ message : 'random-bookmark', bookmark : bookmark });
+    browser.runtime.sendMessage({ message : 'random-bookmark', bookmark : nextBookmark });
   },
 
   /**
