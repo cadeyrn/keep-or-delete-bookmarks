@@ -21,6 +21,13 @@ const kodb = {
   additionalData : [],
 
   /**
+   * The bookmark that is currently being displayed.
+   *
+   * @type {bookmarks.BookmarkTreeNode}
+   */
+  currentBookmark : null,
+
+  /**
    * Fired when the toolbar icon is clicked. This method is used to open the user interface in a new tab or to switch
    * to the tab with the user interface if the user interface is already opened.
    *
@@ -169,12 +176,22 @@ const kodb = {
   },
 
   /**
-   * This method changes the random bookmark in the UI.
+   * This method changes the bookmark that will be displayed next and makes sure that the same bookmark is never
+   * displayed twice in a row.
    *
    * @returns {bookmarks.BookmarkTreeNode} - a single bookmark
    */
   showNextBookmark () {
-    const bookmark = kodb.collectedBookmarks[Math.floor(Math.random() * kodb.collectedBookmarks.length)];
+    const { length } = kodb.collectedBookmarks;
+    let nextBookmark = kodb.currentBookmark;
+
+    while (nextBookmark === kodb.currentBookmark) {
+      nextBookmark = Math.floor(Math.random() * length);
+    }
+
+    kodb.currentBookmark = nextBookmark;
+
+    const bookmark = kodb.collectedBookmarks[nextBookmark];
     browser.runtime.sendMessage({ message : 'random-bookmark', bookmark : bookmark });
   },
 
