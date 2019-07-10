@@ -45,7 +45,7 @@ const ui = {
           elBookmarkUrl.removeChild(elBookmarkUrl.firstChild);
         }
 
-        if (pattern.test(encodeURI(response.bookmark.url))) {
+        if (pattern.test(response.bookmark.url)) {
           const elUrl = document.createElement('a');
           elUrl.setAttribute('href', response.bookmark.url);
           elUrl.setAttribute('target', '_blank');
