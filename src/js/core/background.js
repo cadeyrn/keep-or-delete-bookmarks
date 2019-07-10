@@ -189,7 +189,7 @@ const kodb = {
     let nextBookmark = id;
 
     while (id === nextBookmark) {
-      let idx = Math.floor(Math.random() * length);
+      const idx = Math.floor(Math.random() * length);
       nextBookmark = kodb.collectedBookmarks[idx];
     }
 
