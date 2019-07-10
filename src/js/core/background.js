@@ -204,6 +204,7 @@ const kodb = {
     }
     else {
       nextBookmark = kodb.collectedBookmarks[0];
+      browser.runtime.sendMessage({ message : 'disable-skip-button' });
     }
 
     browser.runtime.sendMessage({ message : 'random-bookmark', bookmark : nextBookmark });

@@ -20,7 +20,7 @@ button.circle-btn[data-action='delete'] {
   background-color: rgb(215, 0, 34);
 }
 
-button.circle-btn[data-action='delete']:hover {
+button.circle-btn[data-action='delete']:not([disabled]):hover {
   background-color: rgb(235, 20, 54);
 }
 
@@ -28,7 +28,7 @@ button.circle-btn[data-action='keep'] {
   background-color: rgb(5, 139, 0);
 }
 
-button.circle-btn[data-action='keep']:hover {
+button.circle-btn[data-action='keep']:not([disabled]):hover {
   background-color: rgb(25, 159, 20);
 }
 
@@ -36,8 +36,12 @@ button.circle-btn[data-action='skip'] {
   background-color: rgb(200, 200, 200);
 }
 
-button.circle-btn[data-action='skip']:hover {
+button.circle-btn[data-action='skip']:not([disabled]):hover {
   background-color: rgb(220, 220, 220);
+}
+
+button[disabled] {
+  cursor: not-allowed;
 }
 
 #button-wrapper {

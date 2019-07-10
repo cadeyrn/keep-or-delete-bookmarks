@@ -63,6 +63,9 @@ const ui = {
         elEmptyState.removeAttribute('hidden');
       }
     }
+    else if (response.message === 'disable-skip-button') {
+      elButtonWrapper.querySelector('[data-action="skip"]').setAttribute('disabled', true);
+    }
   },
 
   /**
