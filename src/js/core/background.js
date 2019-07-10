@@ -7,7 +7,14 @@ const UI_PAGE = 'html/ui.html';
  */
 const kodb = {
   /**
-   * An array containing all bookmarks.
+   * An array containing the IDs of all bookmarks on the whitelist.
+   *
+   * @type {Array.<string>}
+   */
+  whitelist : [],
+
+  /**
+   * An array containing all the user's bookmarks.
    *
    * @type {Array.<bookmarks.BookmarkTreeNode>}
    */
@@ -64,6 +71,9 @@ const kodb = {
    */
   async handleResponse (response) {
     if (response.message === 'collect') {
+      const { whitelist } = await browser.storage.local.get({ whitelist : [] });
+      kodb.whitelist = whitelist;
+
       await kodb.collectAllBookmarks();
       kodb.showNextBookmark();
     }
@@ -140,7 +150,7 @@ const kodb = {
    */
   collectBookmark (bookmark) {
     // we only collect bookmarks, no folders or seperators
-    if (bookmark.type === 'bookmark') {
+    if (bookmark.type === 'bookmark' && !kodb.whitelist.includes(bookmark.id)) {
       const { id, title, url } = bookmark;
       const { path } = kodb.additionalData[id];
 
