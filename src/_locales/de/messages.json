@@ -11,6 +11,9 @@
   "extension_name": {
     "message": "Keep or Delete Bookmarks"
   },
+  "btn_whitelist_remove_all": {
+    "message": "Alle von Whitelist entfernen"
+  },
   "whitelist_delete_bookmark": {
     "message": "Lesezeichen löschen"
   },

@@ -56,7 +56,7 @@ button[disabled] {
   right: 15px;
 }
 
-button.header-btn {
+button.action-btn {
   padding: 8px 15px;
   transform: perspective(1px) translateZ(0);
   font-size: 16px;
@@ -68,7 +68,7 @@ button.header-btn {
   transition: color ease 500ms;
 }
 
-button.header-btn::before {
+button.action-btn::before {
   content: '';
   position: absolute;
   z-index: -1;
@@ -85,7 +85,7 @@ button.header-btn::before {
   transition-timing-function: ease-out;
 }
 
-button.header-btn:hover::before {
+button.action-btn:hover::before {
   transform: scaleX(1);
   transition-timing-function: cubic-bezier(.52, 1.64, .37, .66);
 }
@@ -146,4 +146,9 @@ button.header-btn:hover::before {
 
 #whitelist-table .icon img:hover {
   opacity: 1;
+}
+
+#whitelist-remove-all-wrapper {
+  margin-top: 30px;
+  text-align: center;
 }

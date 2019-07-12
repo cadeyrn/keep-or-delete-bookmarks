@@ -1,5 +1,6 @@
 'use strict';
 
+const elBody = document.querySelector('body');
 const elNoBookmarks = document.getElementById('no-bookmarks');
 const elWhitelistTable = document.getElementById('whitelist-table');
 
@@ -14,6 +15,27 @@ const options = {
    */
   init () {
     options.listBookmarks();
+  },
+
+  /**
+   * Fired when one of the buttons is clicked.
+   *
+   * @param {MouseEvent} e - event
+   *
+   * @returns {void}
+   */
+  handleButtonClicks (e) {
+    if (e.target.getAttribute('data-action')) {
+      e.preventDefault();
+
+      switch (e.target.getAttribute('data-action')) {
+        case 'remove-all-from-whitelist':
+          options.emptyWhitelist();
+          break;
+        default:
+        // do nothing
+      }
+    }
   },
 
   /**
@@ -97,7 +119,18 @@ const options = {
     browser.storage.local.set({ whitelist : whitelist });
 
     options.listBookmarks();
+  },
+
+  /**
+   * Removes all bookmarks from the whitelist.
+   *
+   * @returns {void}
+   */
+  emptyWhitelist () {
+    browser.storage.local.set({ whitelist : {} });
+    options.listBookmarks();
   }
 };
 
 document.addEventListener('DOMContentLoaded', options.init);
+elBody.addEventListener('click', options.handleButtonClicks);
