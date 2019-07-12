@@ -279,7 +279,8 @@ button.action-btn:hover::before {
 }
 
 #whitelist-table {
-  width: 100%;
+  margin: 30px auto 0 auto;
+  width: 90vw;
   border-collapse: collapse;
 }
 
