@@ -284,7 +284,7 @@ button.action-btn:hover::before {
 }
 
 #whitelist-table {
-  margin: 30px auto 0 auto;
+  margin: 30px auto 0;
   width: 90vw;
   border-collapse: collapse;
 }
