@@ -28,6 +28,20 @@ const kodb = {
   additionalData : [],
 
   /**
+   * Fired when a bookmark is deleted.
+   *
+   * @param {int} id - id of the bookmark that was deleted
+   *
+   * @returns {void}
+   */
+  async onBookmarkRemoved (id) {
+    // remove bookmark from the whitelist
+    const { whitelist } = await browser.storage.local.get({ whitelist : [] });
+    whitelist.splice(whitelist.indexOf(id), 1);
+    browser.storage.local.set({ whitelist : whitelist });
+  },
+
+  /**
    * Fired when the toolbar icon is clicked. This method is used to open the user interface in a new tab or to switch
    * to the tab with the user interface if the user interface is already opened.
    *
@@ -239,5 +253,6 @@ const kodb = {
   }
 };
 
+browser.bookmarks.onRemoved.addListener(kodb.onBookmarkRemoved);
 browser.browserAction.onClicked.addListener(kodb.openUserInterface);
 browser.runtime.onMessage.addListener(kodb.handleResponse);
