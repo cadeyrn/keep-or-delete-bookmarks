@@ -22,8 +22,8 @@ const options = {
    * @returns {void}
    */
   async listBookmarks () {
-    const { whitelist } = await browser.storage.local.get({ whitelist : [] });
-    const whitelistLength = whitelist.length;
+    const { whitelist } = await browser.storage.local.get({ whitelist : {} });
+    const whitelistLength = Object.keys(whitelist).length;
 
     // show notice if the whitelist is empty, otherwise show the bookmarks on the whitelist
     if (whitelistLength === 0) {
@@ -35,9 +35,7 @@ const options = {
       elWhitelistTable.removeAttribute('hidden');
     }
 
-    if (whitelist.length > 0) {
-      const bookmarks = await browser.bookmarks.get(whitelist);
-
+    if (whitelistLength > 0) {
       // tbody element, bookmark rows will be added here
       const elTableBody = elWhitelistTable.querySelector('tbody');
 
@@ -47,15 +45,20 @@ const options = {
       }
 
       // add bookmarks to table
-      for (let i = 0; i < whitelistLength; i++) {
+      Object.keys(whitelist).forEach((id) => {
         // row
         const elRow = document.createElement('tr');
         elTableBody.appendChild(elRow);
 
         // name column
         const elNameColumn = document.createElement('td');
-        elNameColumn.textContent = bookmarks[i].title;
+        elNameColumn.textContent = whitelist[id].title;
         elRow.appendChild(elNameColumn);
+
+        // path column
+        const elPathColumn = document.createElement('td');
+        elPathColumn.textContent = whitelist[id].path;
+        elRow.appendChild(elPathColumn);
 
         // icon column
         const elIconColumn = document.createElement('td');
@@ -66,7 +69,7 @@ const options = {
         const elRemoveLink = document.createElement('a');
         elRemoveLink.setAttribute('href', '#');
         elRemoveLink.setAttribute('title', browser.i18n.getMessage('whitelist_delete_bookmark'));
-        elRemoveLink.setAttribute('data-idx', i);
+        elRemoveLink.setAttribute('data-idx', id);
         elRemoveLink.classList.add('icon', 'trash-icon');
         elRemoveLink.addEventListener('click', options.removeFromWhitelist);
         elIconColumn.appendChild(elRemoveLink);
@@ -75,7 +78,7 @@ const options = {
         elRemoveIcon.src = '/images/trash.svg';
         elRemoveIcon.setAttribute('alt', browser.i18n.getMessage('whitelist_delete_bookmark'));
         elRemoveLink.appendChild(elRemoveIcon);
-      }
+      });
     }
   },
 
@@ -89,8 +92,8 @@ const options = {
   async removeFromWhitelist (e) {
     e.preventDefault();
 
-    const { whitelist } = await browser.storage.local.get({ whitelist : [] });
-    whitelist.splice(e.target.parentNode.getAttribute('data-idx'), 1);
+    const { whitelist } = await browser.storage.local.get({ whitelist : {} });
+    delete whitelist[e.target.parentNode.getAttribute('data-idx')];
     browser.storage.local.set({ whitelist : whitelist });
 
     options.listBookmarks();

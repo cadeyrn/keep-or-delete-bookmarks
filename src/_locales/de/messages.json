@@ -19,5 +19,8 @@
   },
   "whitelist_th_name": {
     "message": "Name"
+  },
+  "whitelist_th_path": {
+    "message": "Pfad"
   }
 }

@@ -86,7 +86,7 @@ const ui = {
           ui.deleteBookmark(elBookmarkId.textContent);
           break;
         case 'keep-bookmark':
-          ui.keepBookmark(elBookmarkId.textContent);
+          ui.keepBookmark(elBookmarkId.textContent, elBookmarkTitle.textContent, elBookmarkPath.textContent);
           break;
         case 'skip-bookmark':
           ui.skipBookmark(elBookmarkId.textContent);
@@ -118,13 +118,17 @@ const ui = {
    * This method is used to keep a bookmark.
    *
    * @param {string} id - the id of the bookmark
+   * @param {string} title - the title of the bookmark
+   * @param {string} path - the path of the bookmark
    *
    * @returns {void}
    */
-  keepBookmark (id) {
+  keepBookmark (id, title, path) {
     browser.runtime.sendMessage({
       message : 'keep',
-      id : id
+      id : id,
+      title : title,
+      path : path
     });
   },
 

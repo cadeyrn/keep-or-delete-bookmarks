@@ -7,11 +7,11 @@ const UI_PAGE = 'html/ui.html';
  */
 const kodb = {
   /**
-   * An array containing the IDs of all bookmarks on the whitelist.
+   * An object containing the IDs and paths of all bookmarks on the whitelist.
    *
-   * @type {Array.<string>}
+   * @type {<Object}
    */
-  whitelist : [],
+  whitelist : {},
 
   /**
    * An array containing all the user's bookmarks.
@@ -36,8 +36,8 @@ const kodb = {
    */
   async onBookmarkRemoved (id) {
     // remove bookmark from the whitelist
-    const { whitelist } = await browser.storage.local.get({ whitelist : [] });
-    whitelist.splice(whitelist.indexOf(id), 1);
+    const { whitelist } = await browser.storage.local.get({ whitelist : {} });
+    delete whitelist[id];
     browser.storage.local.set({ whitelist : whitelist });
   },
 
@@ -78,7 +78,7 @@ const kodb = {
    */
   async handleResponse (response) {
     if (response.message === 'collect') {
-      const { whitelist } = await browser.storage.local.get({ whitelist : [] });
+      const { whitelist } = await browser.storage.local.get({ whitelist : {} });
       kodb.whitelist = whitelist;
 
       await kodb.collectAllBookmarks();
@@ -91,7 +91,7 @@ const kodb = {
       kodb.showNextBookmark(response.id);
     }
     else if (response.message === 'keep') {
-      kodb.addToWhitelist(response.id);
+      kodb.addToWhitelist(response.id, response.title, response.path);
       kodb.removeFromCollectedBookmarks(response.id);
       kodb.showNextBookmark(response.id);
     }
@@ -157,7 +157,7 @@ const kodb = {
    */
   collectBookmark (bookmark) {
     // we only collect bookmarks, no folders or seperators
-    if (bookmark.type === 'bookmark' && !kodb.whitelist.includes(bookmark.id)) {
+    if (bookmark.type === 'bookmark' && !kodb.whitelist[bookmark.id]) {
       const { id, title, url } = bookmark;
       const { path } = kodb.additionalData[id];
 
@@ -240,14 +240,16 @@ const kodb = {
    * Adds a bookmark to the whitelist.
    *
    * @param {integer} id - the id of the bookmark
+   * @param {string} title - the title of the bookmark
+   * @param {string} path - the path of the bookmark
    *
    * @returns {void}
    */
-  async addToWhitelist (id) {
-    const { whitelist } = await browser.storage.local.get({ whitelist : [] });
+  async addToWhitelist (id, title, path) {
+    const { whitelist } = await browser.storage.local.get({ whitelist : {} });
 
-    if (!whitelist.includes(id)) {
-      whitelist.push(id);
+    if (!whitelist[id]) {
+      whitelist[id] = { title : title, path : path };
       browser.storage.local.set({ whitelist : whitelist });
     }
   }
