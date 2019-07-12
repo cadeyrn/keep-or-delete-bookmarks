@@ -7,6 +7,9 @@
   <link rel="icon" type="image/png" href="../images/icon.svg" />
 </head>
 <body>
+  <div id="header-btn-wrapper">
+    <button class="header-btn" data-action="open-options" data-i18n="btn_open_whitelist"></button>
+  </div>
   <div id="bookmark-card-wrapper">
     <div>
       <div id="empty-state" data-i18n="bookmarks_empty_state" hidden></div>
@@ -17,9 +20,9 @@
         <div id="bookmark-path"></div>
       </div>
       <div id="button-wrapper" hidden>
-        <button class="circle-btn" data-action="delete"></button>
-        <button class="circle-btn" data-action="keep"></button>
-        <button class="circle-btn" data-action="skip"></button>
+        <button class="circle-btn" data-action="delete-bookmark"></button>
+        <button class="circle-btn" data-action="keep-bookmark"></button>
+        <button class="circle-btn" data-action="skip-bookmark"></button>
       </div>
     </div>
   </div>

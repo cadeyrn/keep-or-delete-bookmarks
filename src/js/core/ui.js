@@ -1,5 +1,7 @@
 'use strict';
 
+const WHITELIST_PAGE = 'options.html';
+
 const elBody = document.querySelector('body');
 const elBookmarkCard = document.getElementById('bookmark-card');
 const elBookmarkId = document.getElementById('bookmark-id');
@@ -64,7 +66,7 @@ const ui = {
       }
     }
     else if (response.message === 'disable-skip-button') {
-      elButtonWrapper.querySelector('[data-action="skip"]').setAttribute('disabled', true);
+      elButtonWrapper.querySelector('[data-action="skip-bookmark"]').setAttribute('disabled', true);
     }
   },
 
@@ -75,19 +77,22 @@ const ui = {
    *
    * @returns {void}
    */
-  handleActionButtonClicks (e) {
+  handleButtonClicks (e) {
     if (e.target.getAttribute('data-action')) {
       e.preventDefault();
 
       switch (e.target.getAttribute('data-action')) {
-        case 'delete':
+        case 'delete-bookmark':
           ui.deleteBookmark(elBookmarkId.textContent);
           break;
-        case 'keep':
+        case 'keep-bookmark':
           ui.keepBookmark(elBookmarkId.textContent);
           break;
-        case 'skip':
+        case 'skip-bookmark':
           ui.skipBookmark(elBookmarkId.textContent);
+          break;
+        case 'open-options':
+          ui.openWhitelist();
           break;
         default:
         // do nothing
@@ -135,10 +140,19 @@ const ui = {
       message : 'skip',
       id : id
     });
+  },
+
+  /**
+   * This method is used to open the options.
+   *
+   * @returns {void}
+   */
+  openWhitelist () {
+    browser.tabs.update({ url : WHITELIST_PAGE });
   }
 };
 
 document.addEventListener('DOMContentLoaded', ui.init);
-elBody.addEventListener('click', ui.handleActionButtonClicks);
+elBody.addEventListener('click', ui.handleButtonClicks);
 
 browser.runtime.onMessage.addListener(ui.handleResponse);

@@ -23,6 +23,10 @@
     "storage",
     "tabs"
   ],
+  "options_ui": {
+    "page": "html/options.html",
+    "open_in_tab": true
+  },
   "default_locale": "en",
   "applications": {
     "gecko": {

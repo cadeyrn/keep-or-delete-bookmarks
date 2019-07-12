@@ -2,10 +2,19 @@
   "bookmarks_empty_state": {
     "message": "Gut gemacht! Keine weiteren Lesezeichen zu überprüfen."
   },
+  "btn_open_whitelist": {
+    "message": "Whitelist öffnen"
+  },
   "extension_description": {
     "message": "Keep or Delete Bookmarks."
   },
   "extension_name": {
     "message": "Keep or Delete Bookmarks"
+  },
+  "whitelist_delete_bookmark": {
+    "message": "Lesezeichen löschen"
+  },
+  "whitelist_th_name": {
+    "message": "Name"
   }
 }
