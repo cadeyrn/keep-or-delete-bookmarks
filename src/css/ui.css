@@ -260,6 +260,10 @@ button.action-btn:hover::before {
   text-align: center;
 }
 
+#bookmark-card-wrapper {
+  margin-top: -100px;
+}
+
 #bookmark-card-wrapper,
 #no-bookmarks:not([hidden]) {
   display: flex;
