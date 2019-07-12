@@ -176,19 +176,19 @@ button.circle-btn[data-action='delete-bookmark']:not([disabled]):hover {
 }
 
 button.circle-btn[data-action='keep-bookmark'] {
-  background-color: rgb(5, 139, 0);
+  background-color: var(--color-green);
 }
 
 button.circle-btn[data-action='keep-bookmark']:not([disabled]):hover {
-  background-color: rgb(25, 159, 20);
+  background-color: var(--color-green-dark);
 }
 
 button.circle-btn[data-action='skip-bookmark'] {
-  background-color: rgb(200, 200, 200);
+  background-color: var(--color-blue);
 }
 
 button.circle-btn[data-action='skip-bookmark']:not([disabled]):hover {
-  background-color: rgb(220, 220, 220);
+  background-color: var(--color-blue-dark);
 }
 
 button[disabled] {
