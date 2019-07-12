@@ -10,11 +10,19 @@ const elBookmarkUrl = document.getElementById('bookmark-url');
 const elBookmarkTitle = document.getElementById('bookmark-title');
 const elButtonWrapper = document.getElementById('button-wrapper');
 const elEmptyState = document.getElementById('empty-state');
+const elEnableConfirmations = document.getElementById('enable-confirmations');
 
 /**
  * @exports ui
  */
 const ui = {
+  /**
+   * Whether or not confirmation dialogs are enabled or not. Default: true.
+   *
+   * @type {booblean}
+   */
+  confirmations : true,
+
   /**
    * Fired when the initial HTML document has been completely loaded and parsed. Starts the collecting process.
    *
@@ -77,7 +85,17 @@ const ui = {
    * @returns {void}
    */
   handleResponse (response) {
-    if (response.message === 'random-bookmark') {
+    if (response.message === 'confirmations') {
+      ui.confirmations = response.confirmations;
+
+      if (response.confirmations) {
+       elEnableConfirmations.setAttribute('checked', true);
+      }
+      else {
+        elEnableConfirmations.removeAttribute('checked');
+      }
+    }
+    else if (response.message === 'random-bookmark') {
       if (response.bookmark) {
         const pattern = new RegExp(/^https?:\/\//, 'gi');
 
@@ -154,7 +172,9 @@ const ui = {
    * @returns {void}
    */
   async deleteBookmark (id, title) {
-    await ui.confirm(title);
+    if (ui.confirmations) {
+      await ui.confirm(title);
+    }
 
     browser.runtime.sendMessage({
       message : 'delete',
@@ -206,5 +226,10 @@ const ui = {
 
 document.addEventListener('DOMContentLoaded', ui.init);
 elBody.addEventListener('click', ui.handleButtonClicks);
+
+elEnableConfirmations.addEventListener('change', (e) => {
+  ui.confirmations = e.target.checked;
+  browser.storage.local.set({ confirmations : e.target.checked });
+});
 
 browser.runtime.onMessage.addListener(ui.handleResponse);

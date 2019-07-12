@@ -30,9 +30,11 @@
     <div>
       <header id="confirm-title"></header>
       <section>
-        <form>
-          <p data-i18n="confirm_delete_bookmark"></p>
-        </form>
+        <div data-i18n="confirm_delete_bookmark"></div>
+        <div class="checkbox">
+          <input type="checkbox" id="enable-confirmations">
+          <label for="enable-confirmations" data-i18n="confirm_checkbox"></label>
+        </div>
       </section>
       <aside>
         <button id="button-confirm-cancel" class="action-btn secondary-action" data-i18n="confirm_btn_cancel"></button>

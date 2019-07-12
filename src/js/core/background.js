@@ -78,8 +78,10 @@ const kodb = {
    */
   async handleResponse (response) {
     if (response.message === 'collect') {
-      const { whitelist } = await browser.storage.local.get({ whitelist : {} });
+      const { whitelist, confirmations } = await browser.storage.local.get({ whitelist : {}, confirmations : true });
       kodb.whitelist = whitelist;
+
+      browser.runtime.sendMessage({ message : 'confirmations', confirmations : confirmations });
 
       await kodb.collectAllBookmarks();
       kodb.showNextBookmark();

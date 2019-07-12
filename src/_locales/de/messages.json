@@ -20,6 +20,9 @@
   "confirm_btn_ok": {
     "message": "OK"
   },
+  "confirm_checkbox": {
+    "message": "Bestätigungsdialoge aktivieren"
+  },
   "confirm_delete_bookmark": {
     "message": "Soll das Lesezeichen wirklich gelöscht werden?"
   },
