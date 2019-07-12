@@ -9,7 +9,7 @@ const kodb = {
   /**
    * An object containing the IDs and paths of all bookmarks on the whitelist.
    *
-   * @type {<Object}
+   * @type {Object}
    */
   whitelist : {},
 
