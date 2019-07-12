@@ -10,29 +10,31 @@
   <header id='header'>
     <a id='logo' href='ui.html'></a>
   </header>
-  <div id="header-btn-wrapper">
-    <div class="checkbox">
-      <input type="checkbox" id="enable-confirmations">
-      <label for="enable-confirmations" data-i18n="confirm_checkbox"></label>
-    </div>
-    <button class="action-btn" data-action="open-options" data-i18n="btn_open_whitelist"></button>
-  </div>
-  <div id="bookmark-card-wrapper">
-    <div>
-      <div id="empty-state" data-i18n="bookmarks_empty_state" hidden></div>
-      <div id="bookmark-card" hidden>
-        <div id="bookmark-id" hidden></div>
-        <div id="bookmark-title"></div>
-        <div id="bookmark-url"></div>
-        <div id="bookmark-path"></div>
+    <main>
+    <div id="header-btn-wrapper">
+      <div class="checkbox">
+        <input type="checkbox" id="enable-confirmations">
+        <label for="enable-confirmations" data-i18n="confirm_checkbox"></label>
       </div>
-      <div id="button-wrapper" hidden>
-        <button class="circle-btn" data-action="delete-bookmark" data-i18n="btn_delete_bookmark"></button>
-        <button class="circle-btn" data-action="keep-bookmark" data-i18n="btn_keep_bookmark"></button>
-        <button class="circle-btn" data-action="skip-bookmark" data-i18n="btn_skip_bookmark"></button>
+      <button class="action-btn" data-action="open-options" data-i18n="btn_open_whitelist"></button>
+    </div>
+    <div id="bookmark-card-wrapper">
+      <div>
+        <div id="empty-state" data-i18n="bookmarks_empty_state" hidden></div>
+        <div id="bookmark-card" hidden>
+          <div id="bookmark-id" hidden></div>
+          <div id="bookmark-title"></div>
+          <div id="bookmark-url"></div>
+          <div id="bookmark-path"></div>
+        </div>
+        <div id="button-wrapper" hidden>
+          <button class="circle-btn" data-action="delete-bookmark" data-i18n="btn_delete_bookmark"></button>
+          <button class="circle-btn" data-action="keep-bookmark" data-i18n="btn_keep_bookmark"></button>
+          <button class="circle-btn" data-action="skip-bookmark" data-i18n="btn_skip_bookmark"></button>
+        </div>
       </div>
     </div>
-  </div>
+  </main>
   <div id="confirm-dialog" class="modal-dialog">
     <div>
       <header id="confirm-title"></header>

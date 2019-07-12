@@ -18,6 +18,10 @@ body {
   overflow-x: hidden;
 }
 
+main {
+  padding-top: 100px;
+}
+
 .modal-dialog {
   display: flex;
   align-items: center;
