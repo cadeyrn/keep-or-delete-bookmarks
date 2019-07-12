@@ -2,8 +2,17 @@
   "bookmarks_empty_state": {
     "message": "Gut gemacht! Keine weiteren Lesezeichen zu überprüfen."
   },
+  "btn_delete_bookmark": {
+    "message": "löschen"
+  },
+  "btn_keep_bookmark": {
+    "message": "behalten"
+  },
   "btn_open_whitelist": {
     "message": "Whitelist öffnen"
+  },
+  "btn_skip_bookmark": {
+    "message": "überspringen"
   },
   "extension_description": {
     "message": "Keep or Delete Bookmarks."

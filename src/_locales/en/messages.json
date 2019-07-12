@@ -2,8 +2,17 @@
   "bookmarks_empty_state": {
     "message": "Well done! No more bookmarks to check."
   },
+  "btn_delete_bookmark": {
+    "message": "delete"
+  },
+  "btn_keep_bookmark": {
+    "message": "keep"
+  },
   "btn_open_whitelist": {
     "message": "open whitelist"
+  },
+  "btn_skip_bookmark": {
+    "message": "skip"
   },
   "extension_description": {
     "message": "Keep or Delete Bookmarks."
