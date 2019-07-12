@@ -164,11 +164,11 @@ button.circle-btn {
 }
 
 button.circle-btn[data-action='delete-bookmark'] {
-  background-color: rgb(215, 0, 34);
+  background-color: var(--color-red);
 }
 
 button.circle-btn[data-action='delete-bookmark']:not([disabled]):hover {
-  background-color: rgb(235, 20, 54);
+  background-color: var(--color-red-dark);
 }
 
 button.circle-btn[data-action='keep-bookmark'] {
