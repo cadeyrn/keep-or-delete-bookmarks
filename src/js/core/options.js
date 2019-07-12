@@ -11,7 +11,7 @@ const options = {
    *
    * @returns {void}
    */
-  async init () {
+  init () {
     options.listBookmarks();
   },
 
@@ -91,7 +91,7 @@ const options = {
     browser.storage.local.set({ whitelist : whitelist });
 
     options.listBookmarks();
-  },
+  }
 };
 
 document.addEventListener('DOMContentLoaded', options.init);
