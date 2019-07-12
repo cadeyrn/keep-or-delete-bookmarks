@@ -172,17 +172,6 @@ const kodb = {
   },
 
   /**
-   * This method finds a bookmark by the ID.
-   *
-   * @param {string} id - the ID of the bookmark
-   *
-   * @returns {bookmarks.BookmarkTreeNode} - a single bookmark
-   */
-  findById (id) {
-    return kodb.collectedBookmarks.filter((bookmark) => bookmark.id === id)[0];
-  },
-
-  /**
    * This method finds the index of a bookmark in the array of collected bookmarks.
    *
    * @param {string} id - the ID of the bookmark
