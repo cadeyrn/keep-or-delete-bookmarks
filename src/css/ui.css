@@ -109,10 +109,6 @@ button.header-btn:hover::before {
   box-shadow: 2px 3px 5px rgba(0, 0, 0, .3);
 }
 
-#bookmark-id {
-  display: none;
-}
-
 #bookmark-title {
   font-weight: 700;
 }
