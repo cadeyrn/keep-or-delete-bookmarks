@@ -96,7 +96,7 @@ button.header-btn:hover::before {
 }
 
 #bookmark-card-wrapper,
-#no-bookmarks {
+#no-bookmarks:not([hidden]) {
   display: flex;
   justify-content: center;
   align-items: center;
