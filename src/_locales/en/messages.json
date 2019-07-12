@@ -14,6 +14,9 @@
   "whitelist_delete_bookmark": {
     "message": "Ddelete bookmark"
   },
+  "whitelist_empty_state": {
+    "message": "No bookmarks on the whitelist."
+  },
   "whitelist_th_name": {
     "message": "Name"
   }

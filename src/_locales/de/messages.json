@@ -14,6 +14,9 @@
   "whitelist_delete_bookmark": {
     "message": "Lesezeichen löschen"
   },
+  "whitelist_empty_state": {
+    "message": "Keine Lesezeichen auf der Whitelist."
+  },
   "whitelist_th_name": {
     "message": "Name"
   }

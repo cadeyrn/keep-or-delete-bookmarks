@@ -1,5 +1,6 @@
 'use strict';
 
+const elNoBookmarks = document.getElementById('no-bookmarks');
 const elWhitelistTable = document.getElementById('whitelist-table');
 
 /**
@@ -26,9 +27,11 @@ const options = {
 
     // show notice if the whitelist is empty, otherwise show the bookmarks on the whitelist
     if (whitelistLength === 0) {
+      elNoBookmarks.removeAttribute('hidden');
       elWhitelistTable.setAttribute('hidden', true);
     }
     else {
+      elNoBookmarks.setAttribute('hidden', true);
       elWhitelistTable.removeAttribute('hidden');
     }
 

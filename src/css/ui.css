@@ -95,7 +95,8 @@ button.header-btn:hover::before {
   text-align: center;
 }
 
-#bookmark-card-wrapper {
+#bookmark-card-wrapper,
+#no-bookmarks {
   display: flex;
   justify-content: center;
   align-items: center;
