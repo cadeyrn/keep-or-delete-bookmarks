@@ -89,7 +89,7 @@ const ui = {
       ui.confirmations = response.confirmations;
 
       if (response.confirmations) {
-       elEnableConfirmations.setAttribute('checked', true);
+        elEnableConfirmations.setAttribute('checked', true);
       }
       else {
         elEnableConfirmations.removeAttribute('checked');
