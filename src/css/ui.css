@@ -191,9 +191,29 @@ button[disabled] {
   cursor: not-allowed;
 }
 
+#header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-dark-border);
+  transition: height 250ms ease-in-out;
+}
+
+#logo {
+  display: block;
+  width: 467px;
+  height: 100px;
+  background: url('../images/logo-large.png') 25px center / 442px 70px no-repeat transparent;
+}
+
 #header-btn-wrapper {
   position: absolute;
-  top: 15px;
+  z-index: 20;
+  top: 30px;
   right: 15px;
 }
 
