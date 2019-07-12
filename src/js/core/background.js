@@ -258,3 +258,9 @@ const kodb = {
 browser.bookmarks.onRemoved.addListener(kodb.onBookmarkRemoved);
 browser.browserAction.onClicked.addListener(kodb.openUserInterface);
 browser.runtime.onMessage.addListener(kodb.handleResponse);
+
+browser.menus.create({
+  title : browser.i18n.getMessage('extension_name'),
+  contexts : ['tools_menu'],
+  command : '_execute_browser_action'
+});
