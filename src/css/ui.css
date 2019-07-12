@@ -1,6 +1,10 @@
 :root {
   --color-blue: rgb(10, 132, 255);
   --color-blue-dark: rgb(0, 102, 225);
+  --color-green: rgb(18, 188, 0);
+  --color-green-dark: rgb(0, 158, 0);
+  --color-red: rgb(215, 0, 34);
+  --color-red-dark: rgb(185, 0, 4);
   --color-white: rgb(255, 255, 255);
 }
 
@@ -11,6 +15,94 @@ body {
   background: rgb(235, 235, 235);
   color: rgb(33, 37, 42);
   overflow-x: hidden;
+}
+
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 200;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: scale(.7);
+  opacity: 0;
+  transition: all 300ms;
+  pointer-events: none;
+}
+
+.modal-dialog.visible {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-dialog ~ .modal-dialog-bg {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  background: rgba(0, 0, 0, .8);
+  opacity: 0;
+  transition: all 300ms;
+}
+
+.modal-dialog.visible ~ .modal-dialog-bg {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-dialog > div {
+  width: 550px;
+  max-width: 98%;
+  max-height: 90vh;
+  overflow: auto;
+  border-width: 0;
+  border-radius: 5px;
+  background-color: var(--color-white);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .3);
+}
+
+.modal-dialog header {
+  padding: 10px 15px;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+.modal-dialog section {
+  padding: 30px 15px;
+}
+
+.modal-dialog input {
+  width: 100%;
+}
+
+.modal-dialog aside {
+  padding: 15px;
+  background-color: rgb(240, 240, 240);
+  text-align: right;
+}
+
+.modal-dialog .primary-action {
+  background-color: var(--color-green);
+}
+
+.modal-dialog .primary-action::before {
+  background: var(--color-green-dark);
+}
+
+.modal-dialog .secondary-action {
+  margin-right: 5px;
+  background-color: var(--color-red);
+}
+
+.modal-dialog .secondary-action::before {
+  background: var(--color-red-dark);
 }
 
 button.circle-btn {

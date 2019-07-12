@@ -25,6 +25,51 @@ const ui = {
   },
 
   /**
+   * Confirmation dialog implementation.
+   *
+   * @param {string} title - the title of the bookmark
+   *
+   * @returns {Promise} - resolves on success (OK button)
+   */
+  confirm (title) {
+    const elModal = document.getElementById('confirm-dialog');
+    elModal.classList.add('visible');
+
+    const elTitle = document.getElementById('confirm-title');
+    elTitle.textContent = title;
+
+    const elSubmitButton = elModal.querySelector('#button-confirm-ok');
+    const elCloseButton = elModal.querySelector('#button-confirm-cancel');
+
+    const hideModal = () => {
+      elModal.classList.remove('visible');
+    };
+
+    return new Promise((resolve) => {
+      window.onkeydown = function (e) {
+        if (e.key === 'Escape') {
+          hideModal();
+        }
+      };
+
+      window.onclick = function (e) {
+        if (e.target === elModal) {
+          hideModal();
+        }
+      };
+
+      elCloseButton.onclick = () => {
+        hideModal();
+      };
+
+      elSubmitButton.onclick = () => {
+        hideModal();
+        resolve();
+      };
+    });
+  },
+
+  /**
    * Fired when a message is sent from the background script to the UI script.
    *
    * @param {Object} response - contains the response from the background script
@@ -83,7 +128,7 @@ const ui = {
 
       switch (e.target.getAttribute('data-action')) {
         case 'delete-bookmark':
-          ui.deleteBookmark(elBookmarkId.textContent);
+          ui.deleteBookmark(elBookmarkId.textContent, elBookmarkTitle.textContent);
           break;
         case 'keep-bookmark':
           ui.keepBookmark(elBookmarkId.textContent, elBookmarkTitle.textContent, elBookmarkPath.textContent);
@@ -104,10 +149,13 @@ const ui = {
    * This method is used to delete a bookmark.
    *
    * @param {string} id - the id of the bookmark
+   * @param {string} title - the title of the bookmark
    *
    * @returns {void}
    */
-  deleteBookmark (id) {
+  async deleteBookmark (id, title) {
+    await ui.confirm(title);
+
     browser.runtime.sendMessage({
       message : 'delete',
       id : id
