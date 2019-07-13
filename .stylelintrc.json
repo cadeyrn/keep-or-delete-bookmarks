@@ -179,7 +179,7 @@
     "selector-max-id": 2,
     "selector-max-pseudo-class": 3,
     "selector-max-specificity": null,
-    "selector-max-type": 2,
+    "selector-max-type": 3,
     "selector-max-universal": 0,
     "selector-nested-pattern": null,
     "selector-no-qualifying-type": null,

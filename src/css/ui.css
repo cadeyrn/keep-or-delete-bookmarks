@@ -210,8 +210,8 @@ button.circle-btn[data-action='delete-bookmark']:not([disabled]):hover {
 }
 
 button.circle-btn[data-action='delete-bookmark']:not([disabled]) svg path {
-   fill: var(--color-red);
- }
+  fill: var(--color-red);
+}
 
 button.circle-btn[data-action='delete-bookmark']:not([disabled]):hover svg path {
   fill: var(--color-white);
@@ -365,8 +365,8 @@ button.action-btn:hover::before {
   width: 24px;
   height: 24px;
   vertical-align: middle;
-  opacity: .5;
   cursor: pointer;
+  opacity: .5;
   transition: opacity ease 250ms;
 }
 
