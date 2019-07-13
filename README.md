@@ -1,14 +1,36 @@
 # Firefox Add-on: Keep or Delete Bookmarks (WebExtension)
 
+<img src="src/images/logo-large.png" alt="Logo" width="790" border="0" />
+
 ## Description
 
-TBD
+**Cleaning up bookmarks is boring. The Firefox add-on Keep or Delete Bookmarks combines this task with some fun by
+allowing you to sort the bookmarks like on "Tinder" or similar services.**
+
+The add-on randomly displays one bookmark, including the title, the URL and the containing bookmark folder. The user has
+several options:
+ 
+1) Keep the bookmark. The bookmark will be added to a whitelist and Keep or Delete Bookmarks will never ask again about
+this bookmark.
+
+2) Delete the bookmark. The bookmark will be deleted from your Firefox.
+
+3) Skip the bookmark. You deferred the decision. Keep or Delete Bookmarks will show you the next bookmark without any
+action.
+
+4) Open the bookmark. Maybe you are not sure about the bookmark. This open lets you open the bookmark in a new tab
+before you make a decision.
 
 **Keep or Delete Bookmarks is a WebExtension and compatible with Firefox Quantum (Firefox 68 and later).**
 
 ### Features
 
-- TBD
+- Keep or Delete Bookmarks always shows one random bookmark
+- The add-on makes sure that you never see the same bookmark two times in a row
+- You can keep or delete the bookmark, you can open the bookmark in a new tab and you can defer your decision
+- There is a confirmation dialog when you press the delete button
+- You can disable the confirmation dialogs with one click
+- You can also remove bookmarks from the whitelist at any time
 
 ### Planned features
 
