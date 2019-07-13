@@ -7,7 +7,7 @@
 **Cleaning up bookmarks is boring. The Firefox add-on Keep or Delete Bookmarks brings some fun to this task by
 allowing you to sort out the bookmarks like on "Tinder" or similar services.**
 
-The add-on randomly displays one bookmark, including the title, the URL and the containing bookmark folder. The user has
+The add-on randomly displays one bookmark, including the title, the URL and the bookmark folder. The user has
 several options:
  
 1) Keep the bookmark. The bookmark will be added to a whitelist and Keep or Delete Bookmarks will never ask again about
