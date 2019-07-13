@@ -1,4 +1,6 @@
 :root {
+  --color-body-background: rgb(235, 235, 235);
+  --color-body-text: rgb(33, 37, 42);
   --color-blue: rgb(10, 132, 255);
   --color-blue-dark: rgb(0, 102, 225);
   --color-dark-border: rgb(54, 57, 89);
@@ -14,8 +16,8 @@ body {
   margin: 0;
   font-family: Verdana, sans-serif;
   font-size: 16px;
-  background: rgb(235, 235, 235);
-  color: rgb(33, 37, 42);
+  background: var(--color-body-background);
+  color: var(--color-body-text);
   overflow-x: hidden;
 }
 
@@ -91,7 +93,7 @@ main {
 
 .modal-dialog aside {
   padding: 15px;
-  background-color: rgb(240, 240, 240);
+  background-color: var(--color-body-background);
   text-align: right;
 }
 
@@ -162,7 +164,7 @@ main {
 
 button.circle-btn {
   border-radius: 50%;
-  border: 5px solid rgb(255, 255, 255);
+  border: 5px solid var(--color-white);
   cursor: pointer;
   transition: background ease 250ms;
 }
@@ -396,7 +398,7 @@ button.action-btn:hover::before {
 
 #whitelist-table th, #whitelist-table td {
   padding: 10px 0;
-  border-bottom: 1px solid rgb(150, 150, 150);
+  border-bottom: 1px solid var(--color-dark-border);
   text-align: left;
 }
 
