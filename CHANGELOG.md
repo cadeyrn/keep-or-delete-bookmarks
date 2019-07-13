@@ -11,5 +11,6 @@
 - There is a confirmation dialog when you press the delete button
 - You can disable the confirmation dialogs with one click
 - You can also remove bookmarks from the whitelist at any time
+- Translations: English, German
 
 [Download Signed WebExtension](https://addons.mozilla.org/en-US/firefox/addon/keep-or-delete-bookmarks/versions/?page=1#version-1.0.0)
