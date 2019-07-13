@@ -20,6 +20,7 @@ body {
 
 main {
   padding-top: 100px;
+  padding-bottom: 64px;
 }
 
 .modal-dialog {
@@ -260,17 +261,12 @@ button.action-btn:hover::before {
   text-align: center;
 }
 
-#bookmark-card-wrapper {
-  margin-top: -82px;
-}
-
 #bookmark-card-wrapper,
 #no-bookmarks:not([hidden]) {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -82px;
-  height: 100vh;
+  height: calc(100vh - 165px);
 }
 
 #bookmark-card {
@@ -320,7 +316,7 @@ button.action-btn:hover::before {
 }
 
 #whitelist-remove-all-wrapper {
-  margin-top: 30px;
+  margin: 30px 0;
   text-align: center;
 }
 
