@@ -308,6 +308,7 @@ button.action-btn:hover::before {
   height: 24px;
   vertical-align: middle;
   opacity: .5;
+  cursor: pointer;
   transition: opacity ease 250ms;
 }
 

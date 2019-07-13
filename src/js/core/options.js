@@ -89,7 +89,6 @@ const options = {
 
         // remove icon
         const elRemoveLink = document.createElement('a');
-        elRemoveLink.setAttribute('href', '#');
         elRemoveLink.setAttribute('title', browser.i18n.getMessage('whitelist_delete_bookmark'));
         elRemoveLink.setAttribute('data-idx', id);
         elRemoveLink.classList.add('icon', 'trash-icon');
