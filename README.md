@@ -15,11 +15,11 @@ this bookmark.
 
 2) Delete the bookmark. The bookmark will be deleted from your Firefox.
 
-3) Skip the bookmark. You deferred the decision. Keep or Delete Bookmarks will show you the next bookmark without any
+3) Skip the bookmark and defer the decision. Keep or Delete Bookmarks will show you the next bookmark without any
 action.
 
-4) Open the bookmark. Maybe you are not sure about the bookmark. This open lets you open the bookmark in a new tab
-before you make a decision.
+4) Open the bookmark. Maybe you are not sure about the bookmark yet. This options lets you open the bookmark in a new
+tab before you make a decision.
 
 **Keep or Delete Bookmarks is a WebExtension and compatible with Firefox Quantum (Firefox 68 and later).**
 
