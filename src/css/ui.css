@@ -363,8 +363,8 @@ button.action-btn:hover::before {
   margin-right: 10px;
   width: 24px;
   height: 24px;
-  vertical-align: -6px;
   background: url('../images/link.svg') center center / 24px 24px no-repeat transparent;
+  vertical-align: -6px;
 }
 
 #bookmark-url a, #whitelist-table a {
@@ -387,8 +387,8 @@ button.action-btn:hover::before {
   margin-right: 10px;
   width: 24px;
   height: 24px;
-  vertical-align: -6px;
   background: url('../images/path.svg') center center / 24px 24px no-repeat transparent;
+  vertical-align: -6px;
 }
 
 #whitelist-table {
