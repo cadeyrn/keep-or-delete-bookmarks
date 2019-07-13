@@ -93,7 +93,7 @@ const kodb = {
       kodb.showNextBookmark(response.id);
     }
     else if (response.message === 'keep') {
-      kodb.addToWhitelist(response.id, response.title, response.path);
+      kodb.addToWhitelist(response.id, response.title, response.url, response.path);
       kodb.removeFromCollectedBookmarks(response.id);
       kodb.showNextBookmark(response.id);
     }
@@ -232,15 +232,16 @@ const kodb = {
    *
    * @param {integer} id - the id of the bookmark
    * @param {string} title - the title of the bookmark
+   * @param {string} url - the URL of the bookmark
    * @param {string} path - the path of the bookmark
    *
    * @returns {void}
    */
-  async addToWhitelist (id, title, path) {
+  async addToWhitelist (id, title, url, path) {
     const { whitelist } = await browser.storage.local.get({ whitelist : {} });
 
     if (!whitelist[id]) {
-      whitelist[id] = { title : title, path : path };
+      whitelist[id] = { title : title, url : url, path : path };
       browser.storage.local.set({ whitelist : whitelist });
     }
   }

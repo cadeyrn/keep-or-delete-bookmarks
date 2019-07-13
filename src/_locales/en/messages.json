@@ -49,5 +49,8 @@
   },
   "whitelist_th_path": {
     "message": "Pfad"
+  },
+  "whitelist_th_url": {
+    "message": "URL"
   }
 }

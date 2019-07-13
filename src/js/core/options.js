@@ -77,6 +77,11 @@ const options = {
         elNameColumn.textContent = whitelist[id].title;
         elRow.appendChild(elNameColumn);
 
+        // URL column
+        const elUrlColumn = document.createElement('td');
+        elUrlColumn.textContent = whitelist[id].url;
+        elRow.appendChild(elUrlColumn);
+
         // path column
         const elPathColumn = document.createElement('td');
         elPathColumn.textContent = whitelist[id].path;

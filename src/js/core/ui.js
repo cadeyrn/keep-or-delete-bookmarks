@@ -152,7 +152,9 @@ const ui = {
           ui.deleteBookmark(elBookmarkId.textContent, elBookmarkTitle.textContent);
           break;
         case 'keep-bookmark':
-          ui.keepBookmark(elBookmarkId.textContent, elBookmarkTitle.textContent, elBookmarkPath.textContent);
+          ui.keepBookmark(
+            elBookmarkId.textContent, elBookmarkTitle.textContent, elBookmarkUrl.textContent, elBookmarkPath.textContent
+          );
           break;
         case 'open-bookmark':
           window.open(elBookmarkUrl.textContent, '_blank');
@@ -193,15 +195,17 @@ const ui = {
    *
    * @param {string} id - the id of the bookmark
    * @param {string} title - the title of the bookmark
+   * @param {string} url - the URL of the bookmark
    * @param {string} path - the path of the bookmark
    *
    * @returns {void}
    */
-  keepBookmark (id, title, path) {
+  keepBookmark (id, title, url, path) {
     browser.runtime.sendMessage({
       message : 'keep',
       id : id,
       title : title,
+      url : url,
       path : path
     });
   },
