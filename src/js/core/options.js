@@ -101,7 +101,7 @@ const options = {
         elIconColumn.appendChild(elRemoveLink);
 
         const elRemoveIcon = document.createElement('img');
-        elRemoveIcon.src = '/images/trash.svg';
+        elRemoveIcon.src = '/images/cross.svg';
         elRemoveIcon.setAttribute('alt', browser.i18n.getMessage('whitelist_delete_bookmark'));
         elRemoveLink.appendChild(elRemoveIcon);
       });

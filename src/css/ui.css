@@ -7,6 +7,7 @@
   --color-disabled: rgb(194, 194, 194);
   --color-green: rgb(18, 188, 0);
   --color-green-dark: rgb(0, 158, 0);
+  --color-grey: rgb(200, 200, 200);
   --color-red: rgb(215, 0, 34);
   --color-red-dark: rgb(185, 0, 4);
   --color-white: rgb(255, 255, 255);
@@ -391,15 +392,31 @@ button.action-btn:hover::before {
 }
 
 #whitelist-table {
-  margin: 30px auto 0;
-  width: 90vw;
+  table-layout: fixed;
+  margin: 30px;
   border-collapse: collapse;
 }
 
 #whitelist-table th, #whitelist-table td {
-  padding: 10px 0;
-  border-bottom: 1px solid var(--color-dark-border);
+  padding: 15px 5px;
   text-align: left;
+}
+
+#whitelist-table th {
+  border-bottom: 1px solid var(--color-dark-border);
+}
+
+#whitelist-table th:not(:last-child) {
+  width: 32%;
+}
+
+#whitelist-table tr:not(:last-child) td {
+  border-bottom: 1px solid var(--color-grey);
+}
+
+#whitelist-table td {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 #whitelist-table td:first-child {
