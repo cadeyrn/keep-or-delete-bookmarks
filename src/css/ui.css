@@ -357,7 +357,7 @@ button.action-btn:hover::before {
   margin-top: 50px;
 }
 
-#bookmark-url::before {
+#bookmark-url::before, #whitelist-table td:nth-child(2)::before {
   content: '';
   display: inline-block;
   margin-right: 10px;
@@ -381,7 +381,7 @@ button.action-btn:hover::before {
   margin-top: 10px;
 }
 
-#bookmark-path::before {
+#bookmark-path::before, #whitelist-table td:nth-child(3)::before {
   content: '';
   display: inline-block;
   margin-right: 10px;
@@ -408,7 +408,7 @@ button.action-btn:hover::before {
 }
 
 #whitelist-table th:not(:last-child) {
-  width: 32%;
+  width: 33%;
 }
 
 #whitelist-table tr:not(:last-child) td {
@@ -418,6 +418,7 @@ button.action-btn:hover::before {
 #whitelist-table td {
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 #whitelist-table td:first-child {

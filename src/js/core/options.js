@@ -75,6 +75,7 @@ const options = {
         // name column
         const elNameColumn = document.createElement('td');
         elNameColumn.textContent = whitelist[id].title;
+        elNameColumn.setAttribute('title', whitelist[id].title);
         elRow.appendChild(elNameColumn);
 
         // URL column
@@ -93,11 +94,13 @@ const options = {
           elUrlColumn.textContent = whitelist[id].url;
         }
 
+        elUrlColumn.setAttribute('title', whitelist[id].url);
         elRow.appendChild(elUrlColumn);
 
         // path column
         const elPathColumn = document.createElement('td');
         elPathColumn.textContent = whitelist[id].path;
+        elPathColumn.setAttribute('title', whitelist[id].path);
         elRow.appendChild(elPathColumn);
 
         // icon column
