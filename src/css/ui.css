@@ -2,6 +2,7 @@
   --color-blue: rgb(10, 132, 255);
   --color-blue-dark: rgb(0, 102, 225);
   --color-dark-border: rgb(54, 57, 89);
+  --color-disabled: rgb(194, 194, 194);
   --color-green: rgb(18, 188, 0);
   --color-green-dark: rgb(0, 158, 0);
   --color-red: rgb(215, 0, 34);
@@ -166,6 +167,10 @@ button.circle-btn {
   transition: background ease 250ms;
 }
 
+button.circle-btn[disabled], button.circle-btn[disabled]:hover {
+  color: var(--color-disabled);
+}
+
 button.circle-btn:hover {
   color: var(--color-white);
 }
@@ -242,12 +247,20 @@ button.circle-btn[data-action='skip-bookmark']:not([disabled]):hover svg path:fi
   fill: var(--color-white);
 }
 
+button.circle-btn[data-action='skip-bookmark'][disabled] svg path:first-child {
+  fill: var(--color-disabled);
+}
+
 button.circle-btn[data-action='open-bookmark']:not([disabled]) svg {
   stroke: var(--color-blue);
 }
 
 button.circle-btn[data-action='open-bookmark']:not([disabled]):hover svg {
   stroke: var(--color-white);
+}
+
+button.circle-btn[data-action='open-bookmark'][disabled] svg {
+  stroke: var(--color-disabled);
 }
 
 button[disabled] {
