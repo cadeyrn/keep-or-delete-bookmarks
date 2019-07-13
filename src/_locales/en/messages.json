@@ -42,7 +42,7 @@
     "message": "Ddelete bookmark"
   },
   "whitelist_empty_state": {
-    "message": "No bookmarks on the whitelist."
+    "message": "No bookmarks on the whitelist yet."
   },
   "whitelist_th_name": {
     "message": "Name"
