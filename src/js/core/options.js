@@ -66,8 +66,8 @@ const options = {
         elTableBody.removeChild(elTableBody.firstChild);
       }
 
-      // add bookmarks to table
-      Object.keys(whitelist).forEach((id) => {
+      // add bookmarks to table in reversed order (newest at top)
+      Object.keys(whitelist).reverse().forEach((id) => {
         // row
         const elRow = document.createElement('tr');
         elTableBody.appendChild(elRow);
