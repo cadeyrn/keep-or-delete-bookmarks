@@ -187,7 +187,8 @@ button.circle-btn[data-action='keep-bookmark'] svg {
   height: 32px;
 }
 
-button.circle-btn[data-action='skip-bookmark'] {
+button.circle-btn[data-action='skip-bookmark'],
+button.circle-btn[data-action='open-bookmark'] {
   width: 70px;
   height: 70px;
 }
@@ -196,6 +197,12 @@ button.circle-btn[data-action='skip-bookmark'] svg {
   margin: 0 auto;
   width: 24px;
   height: 24px;
+}
+
+button.circle-btn[data-action='open-bookmark'] svg {
+  margin: 0 auto 4px;
+  width: 18px;
+  height: 18px;
 }
 
 button.circle-btn[data-action='delete-bookmark']:not([disabled]):hover {
@@ -222,7 +229,8 @@ button.circle-btn[data-action='keep-bookmark']:not([disabled]):hover svg path {
   fill: var(--color-white);
 }
 
-button.circle-btn[data-action='skip-bookmark']:not([disabled]):hover {
+button.circle-btn[data-action='skip-bookmark']:not([disabled]):hover,
+button.circle-btn[data-action='open-bookmark']:not([disabled]):hover {
   background-color: rgba(10, 132, 255, .5);
 }
 
@@ -232,6 +240,14 @@ button.circle-btn[data-action='skip-bookmark']:not([disabled]) svg path:first-ch
 
 button.circle-btn[data-action='skip-bookmark']:not([disabled]):hover svg path:first-child {
   fill: var(--color-white);
+}
+
+button.circle-btn[data-action='open-bookmark']:not([disabled]) svg {
+  stroke: var(--color-blue);
+}
+
+button.circle-btn[data-action='open-bookmark']:not([disabled]):hover svg {
+  stroke: var(--color-white);
 }
 
 button[disabled] {

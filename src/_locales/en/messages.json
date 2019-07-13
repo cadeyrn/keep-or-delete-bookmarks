@@ -8,6 +8,9 @@
   "btn_keep_bookmark": {
     "message": "keep"
   },
+  "btn_open_bookmark": {
+    "message": "open"
+  },
   "btn_open_whitelist": {
     "message": "open whitelist"
   },

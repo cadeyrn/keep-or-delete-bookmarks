@@ -151,6 +151,9 @@ const ui = {
         case 'keep-bookmark':
           ui.keepBookmark(elBookmarkId.textContent, elBookmarkTitle.textContent, elBookmarkPath.textContent);
           break;
+        case 'open-bookmark':
+          window.open(elBookmarkUrl.textContent, '_blank');
+          break;
         case 'skip-bookmark':
           ui.skipBookmark(elBookmarkId.textContent);
           break;
