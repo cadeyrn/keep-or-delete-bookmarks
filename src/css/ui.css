@@ -342,13 +342,50 @@ button.action-btn:hover::before {
 }
 
 #bookmark-card {
-  width: 450px;
-  background: rgb(255, 255, 255);
-  box-shadow: 2px 3px 5px rgba(0, 0, 0, .3);
+  text-align: center;
 }
 
 #bookmark-title {
   font-weight: 700;
+  font-size: 30px;
+}
+
+#bookmark-url {
+  margin-top: 50px;
+}
+
+#bookmark-url::before {
+  content: '';
+  display: inline-block;
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  vertical-align: -6px;
+  background: url('../images/link.svg') center center / 24px 24px no-repeat transparent;
+}
+
+#bookmark-url a {
+  color: var(--color-blue);
+  text-decoration: none;
+  transition: color ease 250ms;
+}
+
+#bookmark-url a:hover {
+  color: var(--color-blue-dark);
+}
+
+#bookmark-path {
+  margin-top: 10px;
+}
+
+#bookmark-path::before {
+  content: '';
+  display: inline-block;
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  vertical-align: -6px;
+  background: url('../images/path.svg') center center / 24px 24px no-repeat transparent;
 }
 
 #whitelist-table {
