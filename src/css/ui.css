@@ -177,6 +177,7 @@ button.circle-btn:hover {
 
 button.circle-btn svg {
   display: block;
+  pointer-events: none;
 }
 
 button.circle-btn[data-action='delete-bookmark'],
