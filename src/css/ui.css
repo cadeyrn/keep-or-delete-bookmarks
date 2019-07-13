@@ -367,13 +367,13 @@ button.action-btn:hover::before {
   background: url('../images/link.svg') center center / 24px 24px no-repeat transparent;
 }
 
-#bookmark-url a {
+#bookmark-url a, #whitelist-table a {
   color: var(--color-blue);
   text-decoration: none;
   transition: color ease 250ms;
 }
 
-#bookmark-url a:hover {
+#bookmark-url a:hover, #whitelist-table a:hover {
   color: var(--color-blue-dark);
 }
 

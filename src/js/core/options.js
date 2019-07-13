@@ -79,7 +79,20 @@ const options = {
 
         // URL column
         const elUrlColumn = document.createElement('td');
-        elUrlColumn.textContent = whitelist[id].url;
+        const pattern = new RegExp(/^https?:\/\//, 'gi');
+
+        if (pattern.test(whitelist[id].url)) {
+          const elUrl = document.createElement('a');
+          elUrl.setAttribute('href', whitelist[id].url);
+          elUrl.setAttribute('target', '_blank');
+          elUrl.setAttribute('rel', 'noopener');
+          elUrl.textContent = whitelist[id].url;
+          elUrlColumn.appendChild(elUrl);
+        }
+        else {
+          elUrlColumn.textContent = whitelist[id].url;
+        }
+
         elRow.appendChild(elUrlColumn);
 
         // path column
