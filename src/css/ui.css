@@ -394,6 +394,7 @@ button.action-btn:hover::before {
 #whitelist-table {
   table-layout: fixed;
   margin: 30px;
+  width: calc(100vw - 60px);
   border-collapse: collapse;
 }
 
