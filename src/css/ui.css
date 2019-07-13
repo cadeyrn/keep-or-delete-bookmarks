@@ -473,3 +473,9 @@ button.action-btn:hover::before {
   color: var(--color-black);
   text-decoration: none;
 }
+
+@media screen and (max-width: 899px) {
+  .checkbox {
+    display: none;
+  }
+}
