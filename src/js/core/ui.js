@@ -11,6 +11,7 @@ const elBookmarkTitle = document.getElementById('bookmark-title');
 const elButtonWrapper = document.getElementById('button-wrapper');
 const elEmptyState = document.getElementById('empty-state');
 const elEnableConfirmations = document.getElementById('enable-confirmations');
+const elOpenBookmarkBtn = document.querySelector('button[data-action="open-bookmark"]');
 
 /**
  * @exports ui
@@ -117,9 +118,11 @@ const ui = {
           elUrl.setAttribute('rel', 'noopener');
           elUrl.textContent = response.bookmark.url;
           elBookmarkUrl.appendChild(elUrl);
+          elOpenBookmarkBtn.removeAttribute('disabled');
         }
         else {
           elBookmarkUrl.textContent = response.bookmark.url;
+          elOpenBookmarkBtn.setAttribute('disabled', true);
         }
       }
       else {
