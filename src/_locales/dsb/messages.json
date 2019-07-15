@@ -1,0 +1,56 @@
+{
+  "bookmarks_empty_state": {
+    "message": "Derje gótował! Žedne dalšne cytańske znamjenja pśeglědowaś."
+  },
+  "btn_delete_bookmark": {
+    "message": "wulašowaś"
+  },
+  "btn_keep_bookmark": {
+    "message": "wobchowaś"
+  },
+  "btn_open_bookmark": {
+    "message": "wócyniś"
+  },
+  "btn_open_whitelist": {
+    "message": "Bełu lisćinu wócyniś"
+  },
+  "btn_skip_bookmark": {
+    "message": "dalej"
+  },
+  "confirm_btn_cancel": {
+    "message": "Pśetergnuś"
+  },
+  "confirm_btn_ok": {
+    "message": "W pórěźe"
+  },
+  "confirm_checkbox": {
+    "message": "Wobkšuśeńske dialogi zmóžniś"
+  },
+  "confirm_delete_bookmark": {
+    "message": "Ma se cytańske znamje napšawdu lašowaś?"
+  },
+  "extension_description": {
+    "message": "Rumowanje cytańskich znamjenjow jo wóstudne. Rozšyrjenje Firefox Keep or Delete Bookmarks pitśku wjasela do toś togo nadawka pśinjaso, dokulaž dowólujo, cytańske znamjenja ako na „Tinder“ abo pódobnych słužbach wusortěrowaś."
+  },
+  "extension_name": {
+    "message": "Keep or Delete Bookmarks"
+  },
+  "btn_whitelist_remove_all": {
+    "message": "Wšykne z běłeje lisćiny wówónoźeś"
+  },
+  "whitelist_delete_bookmark": {
+    "message": "Cytańske znamjenja wulašowaś"
+  },
+  "whitelist_empty_state": {
+    "message": "Hyšći žedne cytańske znamjenja w běłej lisćinje."
+  },
+  "whitelist_th_name": {
+    "message": "Mě"
+  },
+  "whitelist_th_path": {
+    "message": "Sćažka"
+  },
+  "whitelist_th_url": {
+    "message": "URL"
+  }
+}
