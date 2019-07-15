@@ -1,3 +1,17 @@
+### [Version 1.0.1](https://github.com/cadeyrn/keep-or-delete-bookmarks/releases/tag/v1.0.1) (2019-07-15)
+
+#### Translations
+
+- added Dutch translation (Thanks, PanderMusubi!)
+- added Upper Sorbian translation (Thanks, milupo!)
+- added Lower Sorbian translation (Thanks, milupo!)
+- fixed typos in English translation
+
+[All Changes](https://github.com/cadeyrn/keep-or-delete-bookmarks/compare/v1.0.0...v1.0.1)<br />
+[Download Signed WebExtension](https://addons.mozilla.org/en-US/firefox/addon/keep-or-delete-bookmarks/versions/?page=1#version-1.0.1)
+
+---
+
 ### [Version 1.0.0](https://github.com/cadeyrn/keep-or-delete-bookmarks/releases/tag/v1.0.0) (2019-07-13)
 
 - initial release for [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/keep-or-delete-bookmarks/)

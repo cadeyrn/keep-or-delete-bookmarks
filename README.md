@@ -5,7 +5,7 @@
 ## Description
 
 **Cleaning up bookmarks is boring. The Firefox add-on Keep or Delete Bookmarks brings some fun to this task by
-allowing you to sort out the bookmarks like on "Tinder" or similar services.**
+allowing you to sort out the bookmarks the "Tinder way".**
 
 The add-on randomly displays one bookmark, including the title, the URL and the bookmark folder. The user has
 several options:
@@ -44,6 +44,9 @@ The add-on is currently available in the following languages:
 
 - English
 - German
+- Dutch (Thanks, PanderMusubi!)
+- Upper Sorbian (Thanks, milupo!)
+- Lower Sorbian (Thanks, milupo!)
 
 ### Permissions
 
