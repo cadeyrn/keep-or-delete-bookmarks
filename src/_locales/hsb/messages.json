@@ -1,0 +1,56 @@
+{
+  "bookmarks_empty_state": {
+    "message": "Derje činił! Žane dalše zapołožki přepruwować."
+  },
+  "btn_delete_bookmark": {
+    "message": "zhašeć"
+  },
+  "btn_keep_bookmark": {
+    "message": "wobchować"
+  },
+  "btn_open_bookmark": {
+    "message": "wočinić"
+  },
+  "btn_open_whitelist": {
+    "message": "Bełu lisćinu wočinić"
+  },
+  "btn_skip_bookmark": {
+    "message": "dale"
+  },
+  "confirm_btn_cancel": {
+    "message": "Přetorhnyć"
+  },
+  "confirm_btn_ok": {
+    "message": "W porjadku"
+  },
+  "confirm_checkbox": {
+    "message": "Wobkrućenske dialogi zmóžnić"
+  },
+  "confirm_delete_bookmark": {
+    "message": "Ma so zapołožka woprawdźe zhašeć?"
+  },
+  "extension_description": {
+    "message": "Rumowanje zapołožkow je wostudłe. Rozšěrjenje Firefox Keep or Delete Bookmarks trochu wjesela do tutoho nadawka přinjese, dokelž dowola, zapołožki kaž na „Tinder“ abo podobnych słužbach wusortěrować."
+  },
+  "extension_name": {
+    "message": "Keep or Delete Bookmarks"
+  },
+  "btn_whitelist_remove_all": {
+    "message": "Wšě z běłeje lisćiny wotstronić"
+  },
+  "whitelist_delete_bookmark": {
+    "message": "Zapołožki zhašeć"
+  },
+  "whitelist_empty_state": {
+    "message": "Hišće žane zapołožki w běłej lisćinje."
+  },
+  "whitelist_th_name": {
+    "message": "Mjeno"
+  },
+  "whitelist_th_path": {
+    "message": "Šćežka"
+  },
+  "whitelist_th_url": {
+    "message": "URL"
+  }
+}
