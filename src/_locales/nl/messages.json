@@ -1,0 +1,56 @@
+{
+  "bookmarks_empty_state": {
+    "message": "Goed gedaan! Er zijn geen favorieten meer te checken."
+  },
+  "btn_delete_bookmark": {
+    "message": "verwijder"
+  },
+  "btn_keep_bookmark": {
+    "message": "bewaar"
+  },
+  "btn_open_bookmark": {
+    "message": "open"
+  },
+  "btn_open_whitelist": {
+    "message": "open whitelist"
+  },
+  "btn_skip_bookmark": {
+    "message": "volgende"
+  },
+  "confirm_btn_cancel": {
+    "message": "Annuleer"
+  },
+  "confirm_btn_ok": {
+    "message": "Oké"
+  },
+  "confirm_checkbox": {
+    "message": "Activeer bevestigingsmeldingen"
+  },
+  "confirm_delete_bookmark": {
+    "message": "Moet de favoriet werkelijk worden verwijderd?"
+  },
+  "extension_description": {
+    "message": "Opruimen van favorieten kan saai werk zijn. Deze Firefox-add-on Keep or Delete Bookmarks maakt het leuker doordat je favorieten sorteert zoals \"Tinder\" of vergelijkbare diensten werken."
+  },
+  "extension_name": {
+    "message": "Keep or Delete Bookmarks"
+  },
+  "btn_whitelist_remove_all": {
+    "message": "verwijder alles van de whitelist"
+  },
+  "whitelist_delete_bookmark": {
+    "message": "Verwijder favoriet"
+  },
+  "whitelist_empty_state": {
+    "message": "Nog geen favorieten in de whitelist."
+  },
+  "whitelist_th_name": {
+    "message": "Naam"
+  },
+  "whitelist_th_path": {
+    "message": "Pad"
+  },
+  "whitelist_th_url": {
+    "message": "URL"
+  }
+}

@@ -39,7 +39,7 @@
     "message": "remove all from whitelist"
   },
   "whitelist_delete_bookmark": {
-    "message": "Ddelete bookmark"
+    "message": "Delete bookmark"
   },
   "whitelist_empty_state": {
     "message": "No bookmarks on the whitelist yet."
