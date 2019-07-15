@@ -7,6 +7,10 @@
 - added Lower Sorbian translation (Thanks, milupo!)
 - fixed typos in English translation
 
+#### Dependencies
+
+- updated jsdoc from version 3.6.2 to 3.6.3
+
 [All Changes](https://github.com/cadeyrn/keep-or-delete-bookmarks/compare/v1.0.0...v1.0.1)<br />
 [Download Signed WebExtension](https://addons.mozilla.org/en-US/firefox/addon/keep-or-delete-bookmarks/versions/?page=1#version-1.0.1)
 
