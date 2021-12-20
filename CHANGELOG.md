@@ -4,6 +4,7 @@
 
 - updated eslint from version 6.0.1 to 8.5.0
 - updated eslint-plugin-compat from version 3.0.2 to 4.0.0
+- updated eslint-plugin-no-unsanitized from version 3.0.2 to 4.0.1
 
 ### [Version 1.0.1](https://github.com/cadeyrn/keep-or-delete-bookmarks/releases/tag/v1.0.1) (2019-07-15)
 
