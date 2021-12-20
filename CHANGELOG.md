@@ -9,8 +9,9 @@
 - updated eslint-plugin-xss from version 0.1.9 to 0.1.11
 - updated gulp-htmllint from version 0.0.16 to 0.0.19
 - updated gulp-jsdoc3 from version 2.0.0 to 3.0.0
-- updated stylelint from version 10.1.0 to 14.1.0
 - updated jsdoc from version 3.6.3 to 3.6.7
+- updated stylelint from version 10.1.0 to 14.1.0
+- updated stylelint-csstree-validator from version 1.5.2 to 2.0.0
 
 ### [Version 1.0.1](https://github.com/cadeyrn/keep-or-delete-bookmarks/releases/tag/v1.0.1) (2019-07-15)
 
