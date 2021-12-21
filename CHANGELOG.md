@@ -3,7 +3,7 @@
 #### New Features
 
 - added keyboard support, fixes [#3](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/3)
-    - Right Arrow: next bookmark
+    - Right Arrow: show next bookmark
     - Enter: open bookmark
     - Space: add bookmark to whitelist
     - Backspace: delete bookmark

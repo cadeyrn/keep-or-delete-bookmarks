@@ -1,4 +1,4 @@
-# Firefox Add-on: Keep or Delete Bookmarks (WebExtension)
+# Firefox Add-on: Keep or Delete Bookmarks
 
 <img src="src/images/logo-large.png" alt="Logo" width="790" border="0" />
 
@@ -21,17 +21,20 @@ action.
 4) Open the bookmark. Maybe you are not sure about the bookmark yet. This options lets you open the bookmark in a new
 tab before you make a decision.
 
-**Keep or Delete Bookmarks is a WebExtension and compatible with Firefox Quantum (Firefox 91 and later).**
-
 ### Features
 
 - Keep or Delete Bookmarks always shows one random bookmark
-- You can keep or delete the bookmark, you can open the bookmark in a new tab or you can defer the decision
+- You can keep or delete the bookmark, you can open the bookmark in a new tab, or you can defer the decision
 - After an action Keep or Delete Bookmarks shows you the next bookmark
 - Keep or Delete Bookmark makes sure that you never see the same bookmark two times in a row
 - There is a confirmation dialog when you press the delete button
 - You can disable the confirmation dialogs with one click
 - You can also remove bookmarks from the whitelist at any time
+- You can also use keyboard shortcuts for the primary actions:
+    - Right Arrow: show next bookmark
+    - Enter: open bookmark
+    - Space: add bookmark to whitelist
+    - Backspace: delete bookmark
 
 ### Planned features
 
@@ -81,7 +84,7 @@ The storage permission is needed so that Keep or Delete Bookmarks can remember w
 
 ## Compatibility
 
-Keep or Delete Bookmarks requires at least Firefox 91.
+Keep or Delete Bookmarks requires at least Firefox 91. There is no support for older versions of Firefox.
 
 ## Download
 
