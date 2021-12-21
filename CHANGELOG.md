@@ -14,6 +14,7 @@
 - updated stylelint from version 10.1.0 to 14.1.0
 - updated stylelint-csstree-validator from version 1.5.2 to 2.0.0
 - updated stylelint-order from version 3.0.1 to 5.0.0
+- updated webext from version 3.1.0 to 6.6.0
 
 ### [Version 1.0.1](https://github.com/cadeyrn/keep-or-delete-bookmarks/releases/tag/v1.0.1) (2019-07-15)
 
