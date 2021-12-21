@@ -90,7 +90,7 @@ const ui = {
       ui.confirmations = response.confirmations;
 
       if (response.confirmations) {
-        elEnableConfirmations.setAttribute('checked', true);
+        elEnableConfirmations.setAttribute('checked', 'true');
       }
       else {
         elEnableConfirmations.removeAttribute('checked');
@@ -102,7 +102,7 @@ const ui = {
 
         elBookmarkCard.removeAttribute('hidden');
         elButtonWrapper.removeAttribute('hidden');
-        elEmptyState.setAttribute('hidden', true);
+        elEmptyState.setAttribute('hidden', 'true');
         elBookmarkId.textContent = response.bookmark.id;
         elBookmarkTitle.textContent = response.bookmark.title;
         elBookmarkPath.textContent = response.bookmark.path.join(' / ');
@@ -122,17 +122,17 @@ const ui = {
         }
         else {
           elBookmarkUrl.textContent = response.bookmark.url;
-          elOpenBookmarkBtn.setAttribute('disabled', true);
+          elOpenBookmarkBtn.setAttribute('disabled', 'true');
         }
       }
       else {
-        elBookmarkCard.setAttribute('hidden', true);
-        elButtonWrapper.setAttribute('hidden', true);
+        elBookmarkCard.setAttribute('hidden', 'true');
+        elButtonWrapper.setAttribute('hidden', 'true');
         elEmptyState.removeAttribute('hidden');
       }
     }
     else if (response.message === 'disable-skip-button') {
-      elButtonWrapper.querySelector('[data-action="skip-bookmark"]').setAttribute('disabled', true);
+      elButtonWrapper.querySelector('[data-action="skip-bookmark"]').setAttribute('disabled', 'true');
     }
   },
 

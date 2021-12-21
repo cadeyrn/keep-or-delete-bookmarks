@@ -50,10 +50,10 @@ const options = {
     // show notice if the whitelist is empty, otherwise show the bookmarks on the whitelist
     if (whitelistLength === 0) {
       elNoBookmarks.removeAttribute('hidden');
-      elWhitelistTable.setAttribute('hidden', true);
+      elWhitelistTable.setAttribute('hidden', 'true');
     }
     else {
-      elNoBookmarks.setAttribute('hidden', true);
+      elNoBookmarks.setAttribute('hidden', 'true');
       elWhitelistTable.removeAttribute('hidden');
     }
 
