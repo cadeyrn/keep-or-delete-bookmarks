@@ -21,7 +21,7 @@ action.
 4) Open the bookmark. Maybe you are not sure about the bookmark yet. This options lets you open the bookmark in a new
 tab before you make a decision.
 
-**Keep or Delete Bookmarks is a WebExtension and compatible with Firefox Quantum (Firefox 68 and later).**
+**Keep or Delete Bookmarks is a WebExtension and compatible with Firefox Quantum (Firefox 91 and later).**
 
 ### Features
 
@@ -81,7 +81,7 @@ The storage permission is needed so that Keep or Delete Bookmarks can remember w
 
 ## Compatibility
 
-Keep or Delete Bookmarks requires at least Firefox 68.
+Keep or Delete Bookmarks requires at least Firefox 91.
 
 ## Download
 
