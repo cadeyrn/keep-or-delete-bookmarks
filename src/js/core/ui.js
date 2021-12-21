@@ -137,6 +137,30 @@ const ui = {
   },
 
   /**
+   * Fired when a key is pressed.
+   *
+   * @param {KeyboardEvent} e - event
+   *
+   * @returns {void}
+   */
+  handleKeyPress (e) {
+    if (e.key === 'Backspace') {
+      ui.deleteBookmark(elBookmarkId.textContent, elBookmarkTitle.textContent);
+    }
+    else if (e.key === ' ') {
+      ui.keepBookmark(
+        elBookmarkId.textContent, elBookmarkTitle.textContent, elBookmarkUrl.textContent, elBookmarkPath.textContent
+      );
+    }
+    else if (e.key === 'Enter') {
+      window.open(elBookmarkUrl.textContent, '_blank');
+    }
+    else if (e.key === 'ArrowRight') {
+      ui.skipBookmark(elBookmarkId.textContent);
+    }
+  },
+
+  /**
    * Fired when one of the buttons is clicked.
    *
    * @param {MouseEvent} e - event
@@ -235,6 +259,7 @@ const ui = {
 };
 
 document.addEventListener('DOMContentLoaded', ui.init);
+window.addEventListener('keydown', ui.handleKeyPress);
 elBody.addEventListener('click', ui.handleButtonClicks);
 
 elEnableConfirmations.addEventListener('change', (e) => {

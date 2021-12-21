@@ -1,5 +1,13 @@
 ### Version 2.0.0 (Work in Progress)
 
+#### New Features
+
+- added keyboard support, fixes [#3](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/3)
+    - Right Arrow: next bookmark
+    - Enter: open bookmark
+    - Space: add bookmark to whitelist
+    - Backspace: delete bookmark
+
 #### Notable Changes
 
 - bumped the minimum required Firefox version to Firefox 91, fixes
