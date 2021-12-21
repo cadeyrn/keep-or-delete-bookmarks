@@ -29,6 +29,9 @@
   "confirm_delete_bookmark": {
     "message": "Ma so zapołožka woprawdźe zhašeć?"
   },
+  "date_added": {
+    "message": "Date added"
+  },
   "extension_description": {
     "message": "Rumowanje zapołožkow je wostudłe. Rozšěrjenje Firefox Keep or Delete Bookmarks trochu wjesela do tutoho nadawka přinjese, dokelž dowola, zapołožki kaž na „Tinder“ abo podobnych słužbach wusortěrować."
   },

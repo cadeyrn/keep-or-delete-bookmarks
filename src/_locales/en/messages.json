@@ -29,6 +29,9 @@
   "confirm_delete_bookmark": {
     "message": "Should the bookmark really be deleted?"
   },
+  "date_added": {
+    "message": "Date added"
+  },
   "extension_description": {
     "message": "Cleaning up bookmarks is boring. The Firefox add-on Keep or Delete Bookmarks brings some fun to this task by allowing you to sort out the bookmarks like on \"Tinder\" or similar services."
   },

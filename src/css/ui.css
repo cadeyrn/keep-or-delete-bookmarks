@@ -8,6 +8,7 @@
   --color-green: rgb(18, 188, 0);
   --color-green-dark: rgb(0, 158, 0);
   --color-grey: rgb(200, 200, 200);
+  --color-grey-dark: rgb(115, 115, 115);
   --color-red: rgb(215, 0, 34);
   --color-red-dark: rgb(185, 0, 4);
   --color-white: rgb(255, 255, 255);
@@ -389,6 +390,22 @@ button.action-btn:hover::before {
   height: 24px;
   background: url('../images/path.svg') center center / 24px 24px no-repeat transparent;
   vertical-align: -6px;
+}
+
+#bookmark-date-added {
+  margin-top: 30px;
+  font-size: 14px;
+  color: var(--color-grey-dark);
+}
+
+#bookmark-date-added::before {
+  content: '';
+  display: inline-block;
+  margin-right: 5px;
+  width: 18px;
+  height: 18px;
+  background: url('../images/calendar.svg') center center / 18px 18px no-repeat transparent;
+  vertical-align: -3px;
 }
 
 #whitelist-table {

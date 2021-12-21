@@ -7,6 +7,7 @@
     - Enter: open bookmark
     - Space: add bookmark to whitelist
     - Backspace: delete bookmark
+- added the date when a bookmark was added, fixes [#10](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/10)
 
 #### Notable Changes
 

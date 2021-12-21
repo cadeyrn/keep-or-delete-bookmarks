@@ -160,10 +160,10 @@ const kodb = {
   collectBookmark (bookmark) {
     // we only collect bookmarks, no folders or separators
     if (bookmark.type === 'bookmark' && !kodb.whitelist[bookmark.id]) {
-      const { id, title, url } = bookmark;
+      const { id, title, url, dateAdded } = bookmark;
       const { path } = kodb.additionalData[id];
 
-      kodb.collectedBookmarks.push({ id, title, url, path });
+      kodb.collectedBookmarks.push({ id, title, url, dateAdded, path });
     }
 
     if (bookmark.children) {

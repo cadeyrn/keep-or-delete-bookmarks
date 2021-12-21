@@ -4,6 +4,7 @@ const WHITELIST_PAGE = 'options.html';
 
 const elBody = document.querySelector('body');
 const elBookmarkCard = document.getElementById('bookmark-card');
+const elBookmarkDateAdded = document.getElementById('bookmark-date-added');
 const elBookmarkId = document.getElementById('bookmark-id');
 const elBookmarkPath = document.getElementById('bookmark-path');
 const elBookmarkUrl = document.getElementById('bookmark-url');
@@ -99,6 +100,9 @@ const ui = {
     else if (response.message === 'random-bookmark') {
       if (response.bookmark) {
         const pattern = new RegExp(/^https?:\/\//, 'gi');
+        const dateAdded = new Intl.DateTimeFormat('default', {
+          day : '2-digit', month : '2-digit', year : 'numeric'
+        }).format(new Date(response.bookmark.dateAdded));
 
         elBookmarkCard.removeAttribute('hidden');
         elButtonWrapper.removeAttribute('hidden');
@@ -106,6 +110,7 @@ const ui = {
         elBookmarkId.textContent = response.bookmark.id;
         elBookmarkTitle.textContent = response.bookmark.title;
         elBookmarkPath.textContent = response.bookmark.path.join(' / ');
+        elBookmarkDateAdded.textContent = browser.i18n.getMessage('date_added') + ': ' + dateAdded;
 
         if (elBookmarkUrl.firstChild) {
           elBookmarkUrl.removeChild(elBookmarkUrl.firstChild);

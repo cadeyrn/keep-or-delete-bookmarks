@@ -29,6 +29,9 @@
   "confirm_delete_bookmark": {
     "message": "Moet de favoriet werkelijk worden verwijderd?"
   },
+  "date_added": {
+    "message": "Date added"
+  },
   "extension_description": {
     "message": "Opruimen van favorieten kan saai werk zijn. Deze Firefox-add-on Keep or Delete Bookmarks maakt het leuker doordat je favorieten sorteert zoals \"Tinder\" of vergelijkbare diensten werken."
   },

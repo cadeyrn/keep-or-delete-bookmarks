@@ -29,6 +29,9 @@
   "confirm_delete_bookmark": {
     "message": "Soll das Lesezeichen wirklich gelöscht werden?"
   },
+  "date_added": {
+    "message": "Hinzugefügt am"
+  },
   "extension_description": {
     "message": "Lesezeichen aufräumen ist langweilig. Die Firefox-Erweiterung Keep or Delete Bookmarks bringt etwas Spaß in diese Aufgabe, indem sie es erlaubt, die Lesezeichen wie auf „Tinder“ oder ähnlichen Diensten auszusortieren."
   },
