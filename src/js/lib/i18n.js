@@ -49,9 +49,9 @@ const i18n = {
       const node = nodes[i];
       const children = Array.from(node.children);
       const text = i18n.getMessage(node.dataset.i18n);
-      const parts = text.split(/(\{\d+\})/);
+      const parts = text.split(/({\d+})/);
       parts.forEach((part) => {
-        if ((/\{\d+\}/).test(part)) {
+        if ((/{\d+}/).test(part)) {
           const index = parseInt(part.slice(1));
           node.appendChild(children[index]);
         }
