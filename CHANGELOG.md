@@ -2,12 +2,13 @@
 
 #### Code Quality
 
-- replaced deprecated method call, fixes #29
+- replaced deprecated method call, fixes [#29](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/29)
 
 #### Other Changes
 
-- bumped the minimum required Firefox version to Firefox 91, fixes #31
-- changed copyright year from 2019 to 2022, fixes #30
+- bumped the minimum required Firefox version to Firefox 91, fixes
+  [#31](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/31)
+- changed copyright year from 2019 to 2022, fixes [#30](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/30)
 
 #### Dependencies
 
