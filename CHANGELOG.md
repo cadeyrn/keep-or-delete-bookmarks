@@ -3,7 +3,7 @@
 #### Dependencies
 
 - replaced gulp-eslint 6.0.0 with gulp-eslint-new 1.1.0
-- updated eslint from version 6.0.1 to 8.5.0
+- updated eslint from version 6.0.1 to 8.5.0 and updated configuration
 - updated eslint-plugin-compat from version 3.0.2 to 4.0.0
 - updated eslint-plugin-no-unsanitized from version 3.0.2 to 4.0.1
 - updated eslint-plugin-promise from version 4.2.1 to 6.0.0
