@@ -23,8 +23,8 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Version information:**
- - Firefox version: [e.g. Firefox 68, Firefox ESR 68.2]
- - Keep or Delete Bookmarks version [e.g. 1.0.0]
+ - Firefox version: [e.g. Firefox 95, Firefox ESR 91.4]
+ - Keep or Delete Bookmarks version [e.g. 2.0.0]
 
 **Additional context**
 Add any other context about the problem here.
