@@ -47,6 +47,8 @@
 
 [All Changes](https://github.com/cadeyrn/keep-or-delete-bookmarks/compare/v1.0.1...master)
 
+---
+
 ### [Version 1.0.1](https://github.com/cadeyrn/keep-or-delete-bookmarks/releases/tag/v1.0.1) (2019-07-15)
 
 #### Translations
