@@ -84,7 +84,7 @@ const kodb = {
       browser.runtime.sendMessage({ message : 'confirmations', confirmations : confirmations });
 
       await kodb.collectAllBookmarks();
-      kodb.showNextBookmark();
+      kodb.showNextBookmark(null);
     }
     else if (response.message === 'delete') {
       browser.bookmarks.remove(response.id);
@@ -188,7 +188,7 @@ const kodb = {
    * This method changes the bookmark that will be displayed next and makes sure that the same bookmark is never
    * displayed twice in a row.
    *
-   * @param {string} id - the ID of the bookmark
+   * @param {string|null} id - the ID of the bookmark
    *
    * @returns {void}
    */

@@ -9,6 +9,7 @@
 #### Code Quality
 
 - replaced deprecated method call, fixes [#29](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/29)
+- fixed an "invalid number of arguments" issue, fixes [#32](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/32)
 - fixed a few typos in code comments
 
 #### Dependencies
