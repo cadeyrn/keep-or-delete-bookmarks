@@ -23,7 +23,7 @@ const kodb = {
   /**
    * Additional data stored for bookmarks. In current version it only contains the full bookmark path.
    *
-   * @type {Array.<string>}
+   * @type {Array.<Object>}
    */
   additionalData : [],
 
@@ -108,7 +108,7 @@ const kodb = {
    * @param {bookmarks.BookmarkTreeNode} bookmark - a single bookmark
    * @param {Array.<string>} path - an array with parts of the bookmark path
    *
-   * @returns {Array.<string>} - an array with the full path of all bookmarks
+   * @returns {Array.<Object>} - an array with the full path of all bookmarks
    */
   calculateBookmarkPaths (bookmark, path) {
     if (bookmark.title) {
@@ -230,7 +230,7 @@ const kodb = {
   /**
    * Adds a bookmark to the whitelist.
    *
-   * @param {integer} id - the id of the bookmark
+   * @param {string} id - the id of the bookmark
    * @param {string} title - the title of the bookmark
    * @param {string} url - the URL of the bookmark
    * @param {string} path - the path of the bookmark
