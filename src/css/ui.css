@@ -487,7 +487,7 @@ button.action-btn:hover::before {
   background: url('../images/sh-at.png') no-repeat;
   background-size: 32px 32px;
   background-position: center left;
-  color: var(--color-black);
+  color: var(--color-body-text);
   text-decoration: none;
 }
 
