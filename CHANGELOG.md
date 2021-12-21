@@ -4,6 +4,10 @@
 
 - replaced deprecated method call, fixes #29
 
+#### Other Changes
+
+- changed copyright year from 2019 to 2022, fixes #30
+
 #### Dependencies
 
 - replaced gulp-eslint 6.0.0 with gulp-eslint-new 1.1.0
