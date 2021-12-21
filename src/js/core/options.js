@@ -110,7 +110,7 @@ const options = {
 
         // remove icon
         const elRemoveLink = document.createElement('a');
-        elRemoveLink.setAttribute('title', browser.i18n.getMessage('whitelist_delete_bookmark'));
+        elRemoveLink.setAttribute('title', browser.i18n.getMessage('whitelist_remove_bookmark'));
         elRemoveLink.setAttribute('data-idx', id);
         elRemoveLink.classList.add('icon', 'trash-icon');
         elRemoveLink.addEventListener('click', options.removeFromWhitelist);
@@ -118,7 +118,7 @@ const options = {
 
         const elRemoveIcon = document.createElement('img');
         elRemoveIcon.src = '/images/cross.svg';
-        elRemoveIcon.setAttribute('alt', browser.i18n.getMessage('whitelist_delete_bookmark'));
+        elRemoveIcon.setAttribute('alt', browser.i18n.getMessage('whitelist_remove_bookmark'));
         elRemoveLink.appendChild(elRemoveIcon);
       });
     }

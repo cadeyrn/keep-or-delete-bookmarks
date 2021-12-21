@@ -36,10 +36,10 @@
     "message": "Keep or Delete Bookmarks"
   },
   "btn_whitelist_remove_all": {
-    "message": "Alle von Whitelist entfernen"
+    "message": "alle von Whitelist entfernen"
   },
-  "whitelist_delete_bookmark": {
-    "message": "Lesezeichen löschen"
+  "whitelist_remove_bookmark": {
+    "message": "von Whitelist entfernen"
   },
   "whitelist_empty_state": {
     "message": "Noch keine Lesezeichen auf der Whitelist."

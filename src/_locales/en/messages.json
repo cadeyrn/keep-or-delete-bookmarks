@@ -38,8 +38,8 @@
   "btn_whitelist_remove_all": {
     "message": "remove all from whitelist"
   },
-  "whitelist_delete_bookmark": {
-    "message": "Delete bookmark"
+  "whitelist_remove_bookmark": {
+    "message": "remove from whitelist"
   },
   "whitelist_empty_state": {
     "message": "No bookmarks on the whitelist yet."

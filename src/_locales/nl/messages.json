@@ -38,8 +38,8 @@
   "btn_whitelist_remove_all": {
     "message": "verwijder alles van de whitelist"
   },
-  "whitelist_delete_bookmark": {
-    "message": "Verwijder favoriet"
+  "whitelist_remove_bookmark": {
+    "message": "verwijder favoriet"
   },
   "whitelist_empty_state": {
     "message": "Nog geen favorieten in de whitelist."

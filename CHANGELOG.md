@@ -19,6 +19,11 @@
 - replaced deprecated method call, fixes [#29](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/29)
 - fixed some code style issues and typos, fixes [#32](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/32)
 
+#### Bugfixes
+
+- fixed wrong tooltip for removing a bookmark from the whitelist, fixes
+  [#33](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/33)
+
 #### Dependencies
 
 - replaced gulp-eslint 6.0.0 with gulp-eslint-new 1.1.0

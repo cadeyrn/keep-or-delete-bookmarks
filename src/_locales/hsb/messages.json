@@ -38,11 +38,11 @@
   "btn_whitelist_remove_all": {
     "message": "Wšě z běłeje lisćiny wotstronić"
   },
-  "whitelist_delete_bookmark": {
-    "message": "Zapołožki zhašeć"
+  "whitelist_remove_bookmark": {
+    "message": "zapołožki zhašeć"
   },
   "whitelist_empty_state": {
-    "message": "Hišće žane zapołožki w běłej lisćinje."
+    "message": "hišće žane zapołožki w běłej lisćinje."
   },
   "whitelist_th_name": {
     "message": "Mjeno"

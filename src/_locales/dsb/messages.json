@@ -36,10 +36,10 @@
     "message": "Keep or Delete Bookmarks"
   },
   "btn_whitelist_remove_all": {
-    "message": "Wšykne z běłeje lisćiny wówónoźeś"
+    "message": "wšykne z běłeje lisćiny wówónoźeś"
   },
-  "whitelist_delete_bookmark": {
-    "message": "Cytańske znamjenja wulašowaś"
+  "whitelist_remove_bookmark": {
+    "message": "cytańske znamjenja wulašowaś"
   },
   "whitelist_empty_state": {
     "message": "Hyšći žedne cytańske znamjenja w běłej lisćinje."
