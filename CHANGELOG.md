@@ -9,8 +9,7 @@
 #### Code Quality
 
 - replaced deprecated method call, fixes [#29](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/29)
-- fixed some code style issues, fixes [#32](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/32)
-- fixed a few typos in code comments
+- fixed some code style issues and typos, fixes [#32](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/32)
 
 #### Dependencies
 
