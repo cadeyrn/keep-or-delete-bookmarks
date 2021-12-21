@@ -1,14 +1,15 @@
 ### Version 2.0.0 (Work in Progress)
 
-#### Code Quality
-
-- replaced deprecated method call, fixes [#29](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/29)
-
-#### Other Changes
+#### Notable Changes
 
 - bumped the minimum required Firefox version to Firefox 91, fixes
   [#31](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/31)
 - changed copyright year from 2019 to 2022, fixes [#30](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/30)
+
+#### Code Quality
+
+- replaced deprecated method call, fixes [#29](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/29)
+- fixed a few typos in code comments
 
 #### Dependencies
 
