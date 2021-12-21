@@ -13,6 +13,7 @@ const elButtonWrapper = document.getElementById('button-wrapper');
 const elEmptyState = document.getElementById('empty-state');
 const elEnableConfirmations = document.getElementById('enable-confirmations');
 const elOpenBookmarkBtn = document.querySelector('button[data-action="open-bookmark"]');
+const elPreviousBookmarkBtn = document.querySelector('button[data-action="previous-bookmark"]');
 
 /**
  * @exports ui
@@ -97,7 +98,7 @@ const ui = {
         elEnableConfirmations.removeAttribute('checked');
       }
     }
-    else if (response.message === 'random-bookmark') {
+    else if (response.message === 'show-bookmark') {
       if (response.bookmark) {
         const pattern = new RegExp(/^https?:\/\//, 'gi');
         const dateAdded = new Intl.DateTimeFormat('default', {
@@ -129,12 +130,17 @@ const ui = {
           elBookmarkUrl.textContent = response.bookmark.url;
           elOpenBookmarkBtn.setAttribute('disabled', 'true');
         }
+
+        elPreviousBookmarkBtn.removeAttribute('disabled');
       }
       else {
         elBookmarkCard.setAttribute('hidden', 'true');
         elButtonWrapper.setAttribute('hidden', 'true');
         elEmptyState.removeAttribute('hidden');
       }
+    }
+    else if (response.message === 'disable-previous-button') {
+      elPreviousBookmarkBtn.setAttribute('disabled', 'true');
     }
     else if (response.message === 'disable-skip-button') {
       elButtonWrapper.querySelector('[data-action="skip-bookmark"]').setAttribute('disabled', 'true');
@@ -159,6 +165,9 @@ const ui = {
     }
     else if (e.key === 'Enter') {
       window.open(elBookmarkUrl.textContent, '_blank');
+    }
+    else if (e.key === 'ArrowLeft') {
+      ui.previousBookmark();
     }
     else if (e.key === 'ArrowRight') {
       ui.skipBookmark(elBookmarkId.textContent);
@@ -187,6 +196,9 @@ const ui = {
           break;
         case 'open-bookmark':
           window.open(elBookmarkUrl.textContent, '_blank');
+          break;
+        case 'previous-bookmark':
+          ui.previousBookmark();
           break;
         case 'skip-bookmark':
           ui.skipBookmark(elBookmarkId.textContent);
@@ -237,6 +249,15 @@ const ui = {
       url : url,
       path : path
     });
+  },
+
+  /**
+   * This method is used to show the previous bookmark.
+   *
+   * @returns {void}
+   */
+  previousBookmark () {
+    browser.runtime.sendMessage({ message : 'previous' });
   },
 
   /**

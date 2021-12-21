@@ -29,10 +29,10 @@
           <div id="bookmark-date-added"></div>
         </div>
         <div id="button-wrapper" hidden>
-          <button class="circle-btn" data-action="skip-bookmark" data-i18n="btn_skip_bookmark">
+          <button class="circle-btn" data-action="previous-bookmark" data-i18n="btn_previous_bookmark">
             <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48">
-              <path d="M12 36l17-12-17-12v24zm20-24v24h4V12h-4z"/>
-              <path d="M0 0h48v48H0z" fill="none"/>
+              <path d="M36 12 L19 24 36 36 Z M16 36 L16 12 12 12 12 36 Z"/>
+              <path d="M48 48 L0 48 0 0 48 0 Z" fill="none"/>
             </svg>
           </button>
           <button class="circle-btn" data-action="delete-bookmark" data-i18n="btn_delete_bookmark">
@@ -53,13 +53,21 @@
                 L49.635,39.91L66.27,23.696L43.28,20.355L33-0.475L33-0.475z"/>
             </svg>
           </button>
-          <button class="circle-btn" data-action="open-bookmark" data-i18n="btn_open_bookmark">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" x2="21" y1="14" y2="3"/>
+          <button class="circle-btn" data-action="skip-bookmark" data-i18n="btn_skip_bookmark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 48 48">
+              <path d="M12 36l17-12-17-12v24zm20-24v24h4V12h-4z"/>
+              <path d="M0 0h48v48H0z" fill="none"/>
             </svg>
           </button>
+          <div>
+            <button class="circle-btn" data-action="open-bookmark" data-i18n="btn_open_bookmark">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" x2="21" y1="14" y2="3"/>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>

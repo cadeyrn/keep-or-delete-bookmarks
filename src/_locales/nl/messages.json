@@ -14,6 +14,9 @@
   "btn_open_whitelist": {
     "message": "open whitelist"
   },
+  "btn_previous_bookmark": {
+    "message": "back"
+  },
   "btn_skip_bookmark": {
     "message": "volgende"
   },

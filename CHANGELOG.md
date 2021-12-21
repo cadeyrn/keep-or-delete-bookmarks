@@ -2,8 +2,11 @@
 
 #### New Features
 
+- added ability to show previous bookmark after skipping, fixes
+  [#13](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/13)
 - added keyboard support, fixes [#3](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/3)
-    - Right Arrow: show next bookmark
+    - Left Arrow: show previous bookmark
+    - Right Arrow: show next (random) bookmark
     - Enter: open bookmark
     - Space: add bookmark to whitelist
     - Backspace: delete bookmark

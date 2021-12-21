@@ -28,6 +28,13 @@ const kodb = {
   additionalData : [],
 
   /**
+   * Stack of bookmark IDs, gets populated when a new bookmark is displayed. Used for showing previous bookmark.
+   *
+   * @type {Array.<string>}
+   */
+  historyStack : [],
+
+  /**
    * Fired when a bookmark is deleted.
    *
    * @param {int} id - id of the bookmark that was deleted
@@ -85,6 +92,8 @@ const kodb = {
 
       await kodb.collectAllBookmarks();
       kodb.showNextBookmark(null);
+
+      browser.runtime.sendMessage({ message : 'disable-previous-button' });
     }
     else if (response.message === 'delete') {
       browser.bookmarks.remove(response.id);
@@ -96,6 +105,9 @@ const kodb = {
       kodb.addToWhitelist(response.id, response.title, response.url, response.path);
       kodb.removeFromCollectedBookmarks(response.id);
       kodb.showNextBookmark(response.id);
+    }
+    else if (response.message === 'previous') {
+      kodb.showPreviousBookmark();
     }
     else if (response.message === 'skip') {
       kodb.showNextBookmark(response.id);
@@ -185,6 +197,24 @@ const kodb = {
   },
 
   /**
+   * This method is used to load the previously shown bookmark.
+   *
+   * @returns {void}
+   */
+  showPreviousBookmark () {
+    const previousBookmarkId = kodb.historyStack.pop();
+
+    if (previousBookmarkId) {
+      const previousBookmark = kodb.collectedBookmarks[kodb.getIndexById(previousBookmarkId)];
+      browser.runtime.sendMessage({ message : 'show-bookmark', bookmark : previousBookmark });
+    }
+
+    if (kodb.historyStack.length === 0) {
+      browser.runtime.sendMessage({ message : 'disable-previous-button' });
+    }
+  },
+
+  /**
    * This method changes the bookmark that will be displayed next and makes sure that the same bookmark is never
    * displayed twice in a row.
    *
@@ -198,6 +228,10 @@ const kodb = {
     let nextBookmark = null;
 
     if (length > 1) {
+      if (id) {
+        kodb.historyStack.push(id);
+      }
+
       while (id === nextBookmarkId) {
         const idx = Math.floor(Math.random() * length);
         nextBookmark = kodb.collectedBookmarks[idx];
@@ -212,7 +246,7 @@ const kodb = {
       browser.runtime.sendMessage({ message : 'disable-skip-button' });
     }
 
-    browser.runtime.sendMessage({ message : 'random-bookmark', bookmark : nextBookmark });
+    browser.runtime.sendMessage({ message : 'show-bookmark', bookmark : nextBookmark });
   },
 
   /**

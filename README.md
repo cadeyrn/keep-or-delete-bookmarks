@@ -31,7 +31,8 @@ tab before you make a decision.
 - You can disable the confirmation dialogs with one click
 - You can also remove bookmarks from the whitelist at any time
 - You can also use keyboard shortcuts for the primary actions:
-    - Right Arrow: show next bookmark
+    - Left Arrow: show previous bookmark
+    - Right Arrow: show next (random) bookmark
     - Enter: open bookmark
     - Space: add bookmark to whitelist
     - Backspace: delete bookmark
