@@ -20,7 +20,7 @@ const ui = {
   /**
    * Whether or not confirmation dialogs are enabled or not. Default: true.
    *
-   * @type {booblean}
+   * @type {boolean}
    */
   confirmations : true,
 

@@ -158,7 +158,7 @@ const kodb = {
    * @returns {void}
    */
   collectBookmark (bookmark) {
-    // we only collect bookmarks, no folders or seperators
+    // we only collect bookmarks, no folders or separators
     if (bookmark.type === 'bookmark' && !kodb.whitelist[bookmark.id]) {
       const { id, title, url } = bookmark;
       const { path } = kodb.additionalData[id];
