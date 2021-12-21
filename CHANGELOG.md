@@ -11,7 +11,7 @@
 - updated gulp-jsdoc3 from version 2.0.0 to 3.0.0
 - updated gulp-stylelint from version 9.0.0 to 13.0.0
 - updated jsdoc from version 3.6.3 to 3.6.7
-- updated stylelint from version 10.1.0 to 14.1.0
+- updated stylelint from version 10.1.0 to 14.1.0 and updated configuration
 - updated stylelint-csstree-validator from version 1.5.2 to 2.0.0
 - updated stylelint-order from version 3.0.1 to 5.0.0
 - updated webext from version 3.1.0 to 6.6.0
