@@ -1,5 +1,9 @@
 ### [Version 2.0.1](https://github.com/cadeyrn/keep-or-delete-bookmarks/releases/tag/v2.0.1) (2021-12-23)
 
+#### Translations
+
+- added Japanese translation (Thanks, Shitennouji!)
+
 #### Dependencies
 
 - updated stylelint from version 14.1.0 to 14.2.0

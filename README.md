@@ -54,6 +54,7 @@ The add-on is currently available in the following languages:
 - English
 - German
 - Dutch (Thanks, PanderMusubi!)
+- Japanese (Thanks, Shitennouji!)
 - Upper Sorbian (Thanks, milupo!)
 - Lower Sorbian (Thanks, milupo!)
 

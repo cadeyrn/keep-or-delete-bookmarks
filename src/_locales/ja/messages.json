@@ -1,0 +1,71 @@
+{
+  "bookmarks_empty_state": {
+    "message": "これでバッチリです！ もうブックマークを検査する必要はありません。"
+  },
+  "btn_delete_bookmark": {
+    "message": "削除する"
+  },
+  "btn_keep_bookmark": {
+    "message": "維持する"
+  },
+  "btn_open_bookmark": {
+    "message": "開く"
+  },
+  "btn_open_whitelist": {
+    "message": "ホワイトリストを開く"
+  },
+  "btn_previous_bookmark": {
+    "message": "戻る"
+  },
+  "btn_skip_bookmark": {
+    "message": "次へ"
+  },
+  "check_status_failure": {
+    "message": "ブックマークが壊れている可能性があります。"
+  },
+  "check_status_skipped": {
+    "message": "照合できません。"
+  },
+  "check_status_success": {
+    "message": "ブックマークは大丈夫そうです。"
+  },
+  "confirm_btn_cancel": {
+    "message": "取り消す"
+  },
+  "confirm_btn_ok": {
+    "message": "OK"
+  },
+  "confirm_checkbox": {
+    "message": "確認のダイアログを有効にする"
+  },
+  "confirm_delete_bookmark": {
+    "message": "ブックマークは、本当に削除して大丈夫でしょうか？"
+  },
+  "date_added": {
+    "message": "追加された日付"
+  },
+  "extension_description": {
+    "message": "ブックマークの整理は面倒でうんざりです。Firefox のアドオン　Keep or Delete Bookmarks（ブックマークの削除や維持）を使用すれば、\",Tinder\", や類似のサービスのようにブックマークを並べ替えることができ、この退屈な作業にいくらかの楽しさが得られます。"
+  },
+  "extension_name": {
+    "message": "Keep or Delete Bookmarks（ブックマークの削除や維持）"
+  },
+  "btn_whitelist_remove_all": {
+    "message": "ホワイトリストから全てを削除する"
+  },
+  "whitelist_remove_bookmark": {
+    "message": "ホワイトリストから外す"
+  },
+  "whitelist_empty_state": {
+    "message": "ホワイトリストには、まだブックマークはありません。"
+  },
+  "whitelist_th_name": {
+    "message": "名称"
+  },
+  "whitelist_th_path": {
+    "message": "パス"
+  },
+  "whitelist_th_url": {
+    "message": "URL"
+  }
+}
