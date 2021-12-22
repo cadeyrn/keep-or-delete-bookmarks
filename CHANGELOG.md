@@ -1,3 +1,14 @@
+### [Version 2.0.1](https://github.com/cadeyrn/keep-or-delete-bookmarks/releases/tag/v2.0.1) (2021-12-23)
+
+#### Dependencies
+
+- updated stylelint from version 14.1.0 to 14.2.0
+
+[All Changes](https://github.com/cadeyrn/keep-or-delete-bookmarks/compare/v2.0.0...v2.0.1)<br />
+[Download Signed WebExtension](https://addons.mozilla.org/en-US/firefox/addon/keep-or-delete-bookmarks/versions/?page=1#version-2.0.1)
+
+---
+
 ### [Version 2.0.0](https://github.com/cadeyrn/keep-or-delete-bookmarks/releases/tag/v2.0.0) (2021-12-22)
 
 #### New Features
