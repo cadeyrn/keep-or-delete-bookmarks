@@ -15,19 +15,19 @@
     "message": "open whitelist"
   },
   "btn_previous_bookmark": {
-    "message": "back"
+    "message": "terug"
   },
   "btn_skip_bookmark": {
     "message": "volgende"
   },
   "check_status_failure": {
-    "message": "The bookmark may be broken."
+    "message": "De favoriet kan stuk zijn."
   },
   "check_status_skipped": {
-    "message": "No check possible."
+    "message": "Check is niet mogelijk."
   },
   "check_status_success": {
-    "message": "The bookmark seems to be okay."
+    "message": "De favoriet lijkt in orde te zijn."
   },
   "confirm_btn_cancel": {
     "message": "Annuleer"
@@ -42,7 +42,7 @@
     "message": "Moet de favoriet werkelijk worden verwijderd?"
   },
   "date_added": {
-    "message": "Date added"
+    "message": "Datum toegevoegd"
   },
   "extension_description": {
     "message": "Opruimen van favorieten kan saai werk zijn. Deze Firefox-add-on Keep or Delete Bookmarks maakt het leuker doordat je favorieten sorteert zoals \"Tinder\" of vergelijkbare diensten werken."
