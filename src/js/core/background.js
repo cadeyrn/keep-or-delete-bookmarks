@@ -7,6 +7,74 @@ const UI_PAGE = 'html/ui.html';
  */
 const kodb = {
   /**
+   * Timeout for reaching a server in milliseconds. It's always 15 seconds, there is no user setting.
+   *
+   * @type {int}
+   */
+  CHECK_TIMEOUT_IN_MS : 15000,
+
+  /**
+   * Whether the internal skip list should be used or not. It's always true, there is no user setting.
+   *
+   * @type {boolean}
+   */
+  CHECK_USE_SKIP_LIST : true,
+
+  /**
+   * An array of URL patterns which should be ignored while checking for broken bookmarks. Please only add patterns
+   * if there are known problems and add a comment with the corresponding GitHub issue.
+   *
+   * @type {Array.<string>}
+   *
+   */
+  CHECK_SKIP_LIST : [
+    /* eslint-disable no-useless-escape, line-comment-position, no-inline-comments */
+    '^https?:\/\/groups.google.com/group/', // issue #9
+    '^https?:\/\/accounts-static.cdn.mozilla.net', // issue #9
+    '^https?:\/\/accounts.firefox.com', // issue #9
+    '^https?:\/\/addons.cdn.mozilla.net', // issue #9
+    '^https?:\/\/addons.mozilla.org', // issue #9
+    '^https?:\/\/api.accounts.firefox.com', // issue #9
+    '^https?:\/\/content.cdn.mozilla.net', // issue #9
+    '^https?:\/\/discovery.addons.mozilla.org', // issue #9
+    '^https?:\/\/install.mozilla.org', // issue #9
+    '^https?:\/\/oauth.accounts.firefox.com', // issue #9
+    '^https?:\/\/profile.accounts.firefox.com', // issue #9
+    '^https?:\/\/support.mozilla.org', // issue #9
+    '^https?:\/\/sync.services.mozilla.com', // issue #9
+    '^https?:\/\/testpilot.firefox.com' // issue #9
+    /* eslint-enable no-useless-escape, line-comment-position, no-inline-comments */
+  ],
+
+  /**
+   * Status code for a server response we are waiting for.
+   *
+   * @type {string}
+   */
+  CHECK_STATUS_AWAIT : 'await',
+
+  /**
+   * Status code for a broken bookmark.
+   *
+   * @type {string}
+   */
+  CHECK_STATUS_FAILURE : 'failure',
+
+  /**
+   * Status code if a bookmark can not be checked.
+   *
+   * @type {string}
+   */
+  CHECK_STATUS_SKIP : 'skip',
+
+  /**
+   * Status code for a working bookmark.
+   *
+   * @type {string}
+   */
+  CHECK_STATUS_SUCCESS : 'success',
+
+  /**
    * An object containing the IDs and paths of all bookmarks on the whitelist.
    *
    * @type {Object}
@@ -207,6 +275,7 @@ const kodb = {
     if (previousBookmarkId) {
       const previousBookmark = kodb.collectedBookmarks[kodb.getIndexById(previousBookmarkId)];
       browser.runtime.sendMessage({ message : 'show-bookmark', bookmark : previousBookmark });
+      kodb.checkForBrokenBookmark(previousBookmark);
     }
 
     if (kodb.historyStack.length === 0) {
@@ -247,6 +316,8 @@ const kodb = {
     }
 
     browser.runtime.sendMessage({ message : 'show-bookmark', bookmark : nextBookmark });
+
+    kodb.checkForBrokenBookmark(nextBookmark);
   },
 
   /**
@@ -277,6 +348,78 @@ const kodb = {
     if (!whitelist[id]) {
       whitelist[id] = { title : title, url : url, path : path };
       browser.storage.local.set({ whitelist : whitelist });
+    }
+  },
+
+  /**
+   * This method is used to check for a broken bookmark.
+   *
+   * @param {bookmarks.BookmarkTreeNode} bookmark - the bookmark object
+   *
+   * @returns {void}
+   */
+  async checkForBrokenBookmark (bookmark) {
+    browser.runtime.sendMessage({ message : 'update-bookmark-status', status : kodb.CHECK_STATUS_AWAIT });
+
+    if (kodb.CHECK_USE_SKIP_LIST && kodb.CHECK_SKIP_LIST.some((i) => new RegExp('\\b' + i + '\\b').test(bookmark.url))) {
+      browser.runtime.sendMessage({ message : 'update-bookmark-status', status : kodb.CHECK_STATUS_SKIP });
+
+      return;
+    }
+
+    let status = kodb.CHECK_STATUS_SKIP;
+
+    if ((/^https?:\/\//).test(bookmark.url)) {
+      status = await kodb.checkHttpResponse(bookmark, 'HEAD');
+    }
+
+    browser.runtime.sendMessage({ message : 'update-bookmark-status', status : status });
+  },
+
+  /**
+   * This method sends a fetch request to check if a bookmark is broken or not.
+   *
+   * @param {bookmarks.BookmarkTreeNode} bookmark - a single bookmark
+   * @param {string} method - the HTTP method to use (HEAD for first attempt, GET for second attempt)
+   *
+   * @returns {Promise<string>} - status of the bookmark
+   */
+  async checkHttpResponse (bookmark, method) {
+    try {
+      const controller = new AbortController();
+      const { signal } = controller;
+
+      setTimeout(() => controller.abort(), kodb.CHECK_TIMEOUT_IN_MS);
+
+      const response = await fetch(bookmark.url, {
+        cache : 'no-store',
+        method : method,
+        mode : 'no-cors',
+        signal : signal
+      });
+
+      if (method === 'HEAD') {
+        if (!response.redirected) {
+          const { headers } = response;
+
+          if (headers.has('Content-Length') && headers.get('Content-Length') === '0') {
+            return kodb.checkHttpResponse(bookmark, 'GET');
+          }
+        }
+
+        if (!response.ok) {
+          return kodb.checkHttpResponse(bookmark, 'GET');
+        }
+      }
+
+      return response.ok ? kodb.CHECK_STATUS_SUCCESS : kodb.CHECK_STATUS_FAILURE;
+    }
+    catch (error) {
+      if (method === 'HEAD') {
+        return kodb.checkHttpResponse(bookmark, 'GET');
+      }
+
+      return kodb.CHECK_STATUS_FAILURE;
     }
   }
 };

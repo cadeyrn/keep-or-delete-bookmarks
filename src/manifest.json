@@ -19,6 +19,7 @@
     "default_title": "__MSG_extension_name__"
   },
   "permissions": [
+    "<all_urls>",
     "bookmarks",
     "menus",
     "storage",

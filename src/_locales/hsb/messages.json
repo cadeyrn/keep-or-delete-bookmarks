@@ -20,6 +20,15 @@
   "btn_skip_bookmark": {
     "message": "dale"
   },
+  "check_status_failure": {
+    "message": "The bookmark may be broken."
+  },
+  "check_status_skipped": {
+    "message": "No check possible."
+  },
+  "check_status_success": {
+    "message": "The bookmark seems to be okay."
+  },
   "confirm_btn_cancel": {
     "message": "Přetorhnyć"
   },

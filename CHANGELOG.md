@@ -2,6 +2,9 @@
 
 #### New Features
 
+- Keep or Delete Bookmarks now checks for broken bookmarks! An internal skip list is used for domains that are known
+  to be unverifiable. This is the reason why the add-on needs the permission to access your data for all sites starting
+  with this update, fixes [#9](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/9)
 - added ability to show previous bookmark after skipping, fixes
   [#13](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/13)
 - added keyboard support, fixes [#3](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/3)
@@ -10,7 +13,8 @@
     - Enter: open bookmark
     - Space: add bookmark to whitelist
     - Backspace: delete bookmark
-- added the date when a bookmark was added, fixes [#10](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/10)
+- added the date when a bookmark was added to Firefox, fixes
+  [#10](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/10)
 
 #### Notable Changes
 

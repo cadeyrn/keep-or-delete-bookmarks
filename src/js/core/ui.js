@@ -14,6 +14,9 @@ const elEmptyState = document.getElementById('empty-state');
 const elEnableConfirmations = document.getElementById('enable-confirmations');
 const elOpenBookmarkBtn = document.querySelector('button[data-action="open-bookmark"]');
 const elPreviousBookmarkBtn = document.querySelector('button[data-action="previous-bookmark"]');
+const elStatus = document.getElementById('bookmark-status');
+const elStatusIndicator = elStatus.querySelector('.indicator');
+const elStatusText = elStatus.querySelector('.text');
 
 /**
  * @exports ui
@@ -144,6 +147,26 @@ const ui = {
     }
     else if (response.message === 'disable-skip-button') {
       elButtonWrapper.querySelector('[data-action="skip-bookmark"]').setAttribute('disabled', 'true');
+    }
+    else if (response.message === 'update-bookmark-status') {
+      if (response.status === 'success') {
+        elStatusIndicator.classList.add('success');
+        elStatusIndicator.classList.remove('failure');
+        elStatusText.textContent = browser.i18n.getMessage('check_status_success');
+      }
+      else if (response.status === 'failure') {
+        elStatusIndicator.classList.add('failure');
+        elStatusIndicator.classList.remove('success');
+        elStatusText.textContent = browser.i18n.getMessage('check_status_failure');
+      }
+      else if (response.status === 'skip') {
+        elStatusIndicator.classList.remove('success', 'failure');
+        elStatusText.textContent = browser.i18n.getMessage('check_status_skipped');
+      }
+      else {
+        elStatusIndicator.classList.remove('success', 'failure');
+        elStatusText.textContent = '…';
+      }
     }
   },
 

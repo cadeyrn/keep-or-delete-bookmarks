@@ -24,12 +24,14 @@ tab before you make a decision.
 ### Features
 
 - Keep or Delete Bookmarks always shows one random bookmark
+- The add-on automatically checks whether the bookmark still works or is broken
+- An internal skip list is used for domains that are known to be unverifiable
 - You can keep or delete the bookmark, you can open the bookmark in a new tab, or you can defer the decision
 - After an action Keep or Delete Bookmarks shows you the next bookmark
 - Keep or Delete Bookmark makes sure that you never see the same bookmark two times in a row
 - There is a confirmation dialog when you press the delete button
 - You can disable the confirmation dialogs with one click
-- You can also remove bookmarks from the whitelist at any time
+- You can remove bookmarks from the whitelist at any time
 - You can also use keyboard shortcuts for the primary actions:
     - Left Arrow: show previous bookmark
     - Right Arrow: show next (random) bookmark
@@ -59,6 +61,11 @@ Keep or Delete Bookmarks needs several permissions to work properly.
 #### mandatory permissions
 
 Keep or Delete Bookmarks does not work without the following permissions:
+
+##### access your data for all sites
+
+The add-on checks the bookmarks by sending a request to the appropriate URLs. This cannot work without the permission
+to access these sites.
 
 ##### access browser tabs
 

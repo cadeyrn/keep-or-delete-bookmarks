@@ -402,8 +402,31 @@ button.action-btn:hover::before {
   vertical-align: -6px;
 }
 
-#bookmark-date-added {
+#bookmark-status {
   margin-top: 30px;
+  font-size: 14px;
+}
+
+#bookmark-status .indicator {
+  display: inline-block;
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color-grey-dark);
+  vertical-align: -3px;
+}
+
+#bookmark-status .indicator.success {
+  background-color: var(--color-green-dark);
+}
+
+#bookmark-status .indicator.failure {
+  background-color: var(--color-red-dark);
+}
+
+#bookmark-date-added {
+  margin-top: 10px;
   font-size: 14px;
   color: var(--color-grey-dark);
 }

@@ -20,6 +20,15 @@
   "btn_skip_bookmark": {
     "message": "weiter"
   },
+  "check_status_failure": {
+    "message": "Das Lesezeichen ist möglicherweise fehlerhaft."
+  },
+  "check_status_skipped": {
+    "message": "Keine Überprüfung möglich."
+  },
+  "check_status_success": {
+    "message": "Das Lesezeichen scheint in Ordnung zu sein."
+  },
   "confirm_btn_cancel": {
     "message": "Abbrechen"
   },
