@@ -12,7 +12,10 @@
     - Right Arrow: show next (random) bookmark
     - Enter: open bookmark
     - Space: add bookmark to whitelist
-    - Backspace: delete bookmark
+    - Backspace: delete bookmark (or opens confirmation dialog if enabled)
+    - in bookmark deletion confirmation dialog:
+        - ESC: close dialog
+        - Enter: delete bookmark
 - added the date when a bookmark was added to Firefox, fixes
   [#10](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/10)
 

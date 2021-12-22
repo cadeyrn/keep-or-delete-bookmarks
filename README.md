@@ -37,7 +37,10 @@ tab before you make a decision.
     - Right Arrow: show next (random) bookmark
     - Enter: open bookmark
     - Space: add bookmark to whitelist
-    - Backspace: delete bookmark
+    - Backspace: delete bookmark (or opens confirmation dialog if enabled)
+    - in bookmark deletion confirmation dialog:
+        - ESC: close dialog
+        - Enter: delete bookmark
 
 ### Planned features
 
