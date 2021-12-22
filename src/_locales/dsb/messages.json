@@ -15,19 +15,19 @@
     "message": "Bełu lisćinu wócyniś"
   },
   "btn_previous_bookmark": {
-    "message": "back"
+    "message": "slědk"
   },
   "btn_skip_bookmark": {
     "message": "dalej"
   },
   "check_status_failure": {
-    "message": "The bookmark may be broken."
+    "message": "Cytańske znamje jo snaź zmólkate."
   },
   "check_status_skipped": {
-    "message": "No check possible."
+    "message": "Žedno pśeglědanje móžne."
   },
   "check_status_success": {
-    "message": "The bookmark seems to be okay."
+    "message": "Cytańske znamje zda se w pórědku."
   },
   "confirm_btn_cancel": {
     "message": "Pśetergnuś"
@@ -42,7 +42,7 @@
     "message": "Ma se cytańske znamje napšawdu lašowaś?"
   },
   "date_added": {
-    "message": "Date added"
+    "message": "Pśidany"
   },
   "extension_description": {
     "message": "Rumowanje cytańskich znamjenjow jo wóstudne. Rozšyrjenje Firefox Keep or Delete Bookmarks pitśku wjasela do toś togo nadawka pśinjaso, dokulaž dowólujo, cytańske znamjenja ako na „Tinder“ abo pódobnych słužbach wusortěrowaś."
@@ -54,7 +54,7 @@
     "message": "wšykne z běłeje lisćiny wówónoźeś"
   },
   "whitelist_remove_bookmark": {
-    "message": "cytańske znamjenja wulašowaś"
+    "message": "z běłeje lisćiny wótwónoźeś"
   },
   "whitelist_empty_state": {
     "message": "Hyšći žedne cytańske znamjenja w běłej lisćinje."

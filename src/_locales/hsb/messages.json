@@ -15,19 +15,19 @@
     "message": "Bełu lisćinu wočinić"
   },
   "btn_previous_bookmark": {
-    "message": "back"
+    "message": "wróćo"
   },
   "btn_skip_bookmark": {
     "message": "dale"
   },
   "check_status_failure": {
-    "message": "The bookmark may be broken."
+    "message": "Zapołožka je snano zmylna."
   },
   "check_status_skipped": {
-    "message": "No check possible."
+    "message": "Žane přepruwowanje móžne."
   },
   "check_status_success": {
-    "message": "The bookmark seems to be okay."
+    "message": "Zapołožka zda so w porjadku być."
   },
   "confirm_btn_cancel": {
     "message": "Přetorhnyć"
@@ -42,7 +42,7 @@
     "message": "Ma so zapołožka woprawdźe zhašeć?"
   },
   "date_added": {
-    "message": "Date added"
+    "message": "Přidaty"
   },
   "extension_description": {
     "message": "Rumowanje zapołožkow je wostudłe. Rozšěrjenje Firefox Keep or Delete Bookmarks trochu wjesela do tutoho nadawka přinjese, dokelž dowola, zapołožki kaž na „Tinder“ abo podobnych słužbach wusortěrować."
@@ -54,7 +54,7 @@
     "message": "Wšě z běłeje lisćiny wotstronić"
   },
   "whitelist_remove_bookmark": {
-    "message": "zapołožki zhašeć"
+    "message": "z běłeje lisćiny wotstronić"
   },
   "whitelist_empty_state": {
     "message": "hišće žane zapołožki w běłej lisćinje."
