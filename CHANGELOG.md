@@ -1,4 +1,4 @@
-### Version 2.0.0 (Work in Progress)
+### [Version 2.0.0](https://github.com/cadeyrn/keep-or-delete-bookmarks/releases/tag/v2.0.0) (2021-12-22)
 
 #### New Features
 
@@ -52,7 +52,8 @@
 - updated stylelint-order from version 3.0.1 to 5.0.0
 - updated webext from version 3.1.0 to 6.6.0
 
-[All Changes](https://github.com/cadeyrn/keep-or-delete-bookmarks/compare/v1.0.1...master)
+[All Changes](https://github.com/cadeyrn/keep-or-delete-bookmarks/compare/v1.0.1...v2.0.0)<br />
+[Download Signed WebExtension](https://addons.mozilla.org/en-US/firefox/addon/keep-or-delete-bookmarks/versions/?page=1#version-2.0.0)
 
 ---
 
