@@ -2,7 +2,8 @@
 
 #### Translations
 
-- added Japanese translation (Thanks, Shitennouji!)
+- added Japanese translation (Thanks, Shitennouji!), fixes
+  [#18](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/18)
 
 #### Dependencies
 
