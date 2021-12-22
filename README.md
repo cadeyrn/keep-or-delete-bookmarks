@@ -57,6 +57,14 @@ The add-on is currently available in the following languages:
 - Upper Sorbian (Thanks, milupo!)
 - Lower Sorbian (Thanks, milupo!)
 
+### Screenhots
+
+| | |
+:-------------------------:|:-------------------------:
+![](screenshots/keep-or-delete-bookmarks-en-1.png) | ![](screenshots/keep-or-delete-bookmarks-en-2.png)
+![](screenshots/keep-or-delete-bookmarks-en-3.png) | ![](screenshots/keep-or-delete-bookmarks-en-4.png)
+![](screenshots/keep-or-delete-bookmarks-en-5.png) |
+
 ### Permissions
 
 Keep or Delete Bookmarks needs several permissions to work properly.
