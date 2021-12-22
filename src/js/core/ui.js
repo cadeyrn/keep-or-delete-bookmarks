@@ -10,6 +10,7 @@ const elBookmarkPath = document.getElementById('bookmark-path');
 const elBookmarkUrl = document.getElementById('bookmark-url');
 const elBookmarkTitle = document.getElementById('bookmark-title');
 const elButtonWrapper = document.getElementById('button-wrapper');
+const elConfirmDialog = document.getElementById('confirm-dialog');
 const elEmptyState = document.getElementById('empty-state');
 const elEnableConfirmations = document.getElementById('enable-confirmations');
 const elOpenBookmarkBtn = document.querySelector('button[data-action="open-bookmark"]');
@@ -178,6 +179,10 @@ const ui = {
    * @returns {void}
    */
   handleKeyPress (e) {
+    if (elConfirmDialog.classList.contains('visible')) {
+      return;
+    }
+
     if (e.key === 'Backspace') {
       ui.deleteBookmark(elBookmarkId.textContent, elBookmarkTitle.textContent);
     }
