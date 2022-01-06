@@ -1,3 +1,13 @@
+### Version 2.0.2 (Work in Progress)
+
+#### Dependencies
+
+- updated eslint from version 8.5.0 to 8.6.0
+
+[All Changes](https://github.com/cadeyrn/keep-or-delete-bookmarks/compare/v2.0.1...master)
+
+---
+
 ### [Version 2.0.1](https://github.com/cadeyrn/keep-or-delete-bookmarks/releases/tag/v2.0.1) (2021-12-23)
 
 #### Translations
