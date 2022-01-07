@@ -1,5 +1,10 @@
 ### Version 2.0.2 (Work in Progress)
 
+#### Bugfixes
+
+- the 'remove all from whitelist' button was seen briefly on the whitelist screen if the whitelist was empty,
+  fixes [#38](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/38) (Thanks, alexmajor!)
+
 #### Dependencies
 
 - updated eslint from version 8.5.0 to 8.6.0
