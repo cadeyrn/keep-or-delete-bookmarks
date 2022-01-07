@@ -2,6 +2,7 @@
 
 const elBody = document.querySelector('body');
 const elNoBookmarks = document.getElementById('no-bookmarks');
+const elRemoveAllWrapper = document.getElementById('whitelist-remove-all-wrapper');
 const elWhitelistTable = document.getElementById('whitelist-table');
 
 /**
@@ -50,10 +51,12 @@ const options = {
     // show notice if the whitelist is empty, otherwise show the bookmarks on the whitelist
     if (whitelistLength === 0) {
       elNoBookmarks.removeAttribute('hidden');
+      elRemoveAllWrapper.setAttribute('hidden', 'true');
       elWhitelistTable.setAttribute('hidden', 'true');
     }
     else {
       elNoBookmarks.setAttribute('hidden', 'true');
+      elRemoveAllWrapper.removeAttribute('hidden');
       elWhitelistTable.removeAttribute('hidden');
     }
 
