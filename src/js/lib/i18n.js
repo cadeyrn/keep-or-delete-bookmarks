@@ -36,13 +36,14 @@ const i18n = {
   },
 
   /**
-   * Translates all strings in the page
+   * Translates all strings in text nodes, placeholders and title attributes.
    *
    * @returns {void}
    */
   translate () {
     document.removeEventListener('DOMContentLoaded', i18n.translate);
 
+    // text node translation
     const nodes = document.querySelectorAll('[data-i18n]');
 
     for (let i = 0, len = nodes.length; i < len; i++) {
@@ -50,6 +51,7 @@ const i18n = {
       const children = Array.from(node.children);
       const text = i18n.getMessage(node.dataset.i18n);
       const parts = text.split(/({\d+})/);
+
       parts.forEach((part) => {
         if ((/{\d+}/).test(part)) {
           const index = parseInt(part.slice(1));
@@ -61,12 +63,15 @@ const i18n = {
       });
     }
 
-    const attributes = ['placeholder', 'data-confirm'];
+    // attribute translation
+    const attributes = ['placeholder', 'title'];
+
     for (const attribute of attributes) {
       const i18nAttribute = `data-i18n-${attribute}`;
       const attrNodes = document.querySelectorAll(`[${i18nAttribute}]`);
+      const { length } = attrNodes;
 
-      for (let i = 0, len = attrNodes.length; i < len; i++) {
+      for (let i = 0; i < length; i++) {
         const node = attrNodes[i];
         const msg = node.getAttribute(i18nAttribute);
         node.setAttribute(attribute, i18n.getMessage(msg));

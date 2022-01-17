@@ -1,4 +1,9 @@
-### Version 2.0.2 (Work in Progress)
+### Version 2.1.0 (Work in Progress)
+
+#### Code Quality
+
+- updated the translation mechanism to the newest version to share more code with other extensions and to improve the
+  maintainability, fixes [#40](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/40)
 
 #### Bugfixes
 
