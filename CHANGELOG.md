@@ -1,5 +1,10 @@
 ### Version 2.1.0 (Work in Progress)
 
+#### Notable Changes
+
+- removed testpilot.firefox.com from internal skip list because this domains is not part of
+  extensions.webextensions.restrictedDomains, fixes [#41](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/41)
+
 #### Code Quality
 
 - updated the translation mechanism to the newest version to share more code with other extensions and to improve the

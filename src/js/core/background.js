@@ -41,8 +41,7 @@ const kodb = {
     '^https?:\/\/oauth.accounts.firefox.com', // issue #9
     '^https?:\/\/profile.accounts.firefox.com', // issue #9
     '^https?:\/\/support.mozilla.org', // issue #9
-    '^https?:\/\/sync.services.mozilla.com', // issue #9
-    '^https?:\/\/testpilot.firefox.com' // issue #9
+    '^https?:\/\/sync.services.mozilla.com' // issue #9
     /* eslint-enable no-useless-escape, line-comment-position, no-inline-comments */
   ],
 
