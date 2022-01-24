@@ -21,6 +21,7 @@
 - updated eslint-plugin-compat from version 4.0.0 to 4.0.1
 - updated gulp-eslint-new from version 1.1.0 to 1.1.2
 - updated jsdoc from version 3.6.7 to 3.6.9
+- updated stylelint from version 14.2.0 to 14.3.0
 
 [All Changes](https://github.com/cadeyrn/keep-or-delete-bookmarks/compare/v2.0.1...master)
 
