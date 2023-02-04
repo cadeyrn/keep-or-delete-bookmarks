@@ -17,7 +17,7 @@
 
 #### Dependencies
 
-- updated eslint from version 8.5.0 to 8.8.0
+- updated eslint from version 8.5.0 to 8.33.0 and updated configuration
 - updated eslint-plugin-compat from version 4.0.0 to 4.0.2
 - updated gulp-eslint-new from version 1.1.0 to 1.3.0
 - updated jsdoc from version 3.6.7 to 3.6.10
