@@ -22,7 +22,7 @@
 - updated eslint-plugin-no-unsanitized from version 4.0.1 to 4.0.2
 - updated eslint-plugin-promise from version 6.0.0 to 6.1.1
 - updated eslint-plugin-xss from version 0.1.11 to 0.1.12
-- updated gulp-eslint-new from version 1.1.0 to 1.3.0
+- updated gulp-eslint-new from version 1.1.0 to 1.7.1
 - updated jsdoc from version 3.6.7 to 3.6.10
 - updated stylelint from version 14.2.0 to 14.5.0 
 - updated webext from version 6.6.0 to 7.5.0
