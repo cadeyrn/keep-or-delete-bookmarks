@@ -24,7 +24,7 @@
 - updated eslint-plugin-xss from version 0.1.11 to 0.1.12
 - updated gulp-eslint-new from version 1.1.0 to 1.7.1
 - updated jsdoc from version 3.6.7 to 4.0.0
-- updated stylelint from version 14.2.0 to 14.5.0 
+- updated stylelint from version 14.2.0 to 14.16.1 and updated configuration
 - updated webext from version 6.6.0 to 7.5.0
 
 [All Changes](https://github.com/cadeyrn/keep-or-delete-bookmarks/compare/v2.0.1...master)
