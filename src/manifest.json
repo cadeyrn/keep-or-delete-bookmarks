@@ -33,7 +33,7 @@
   "applications": {
     "gecko": {
       "id": "keep-or-delete-bookmarks@agenedia.com",
-      "strict_min_version": "91.0"
+      "strict_min_version": "109.0"
     }
   }
 }
