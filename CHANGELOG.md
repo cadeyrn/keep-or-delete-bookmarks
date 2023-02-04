@@ -10,6 +10,7 @@
 
 #### Code Quality
 
+- optimized image files to save a few bytes, fixes [#57](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/57)
 - updated the translation mechanism to the newest version to share more code with other extensions and to improve the
   maintainability, fixes [#40](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/40)
 
