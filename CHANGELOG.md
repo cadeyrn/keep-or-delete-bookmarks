@@ -4,6 +4,7 @@
 
 - removed testpilot.firefox.com from internal skip list because this domain is not part of
   extensions.webextensions.restrictedDomains, fixes [#41](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/41)
+- changed copyright year from 2022 to 2023, fixes [#54](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/54)
 
 #### Code Quality
 
