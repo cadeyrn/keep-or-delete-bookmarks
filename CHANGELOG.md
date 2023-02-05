@@ -22,6 +22,8 @@
 
 #### Bugfixes
 
+- the confirmation dialog did not close if you used the Enter key to confirm, fixes
+  [#59](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/59)
 - the 'remove all from whitelist' button was seen briefly on the whitelist screen if the whitelist was empty,
   fixes [#38](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/38) (Thanks, alexmajor!)
 
