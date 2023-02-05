@@ -4,6 +4,10 @@
 
 - **Keep or Delete Bookmarks now uses Manifest v3**, fixes
   [#44](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/44)
+- **Keep or Delete Bookmarks now asks at runtime for permission** to access all website data if permission is not
+  granted. The permission is technically needed to check for broken bookmarks. Therefore, the permission is no longer
+  needed for installation. Keep or Delete Bookmarks also reacts to permission changes via the add-ons manager, fixes
+  [#56](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/56)
 - bumped the minimum required Firefox version to Firefox 109, fixes
   [#55](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/55)
 - removed testpilot.firefox.com from internal skip list because this domain is not part of

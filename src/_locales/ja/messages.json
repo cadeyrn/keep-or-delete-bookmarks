@@ -23,6 +23,9 @@
   "check_status_failure": {
     "message": "ブックマークが壊れている可能性があります。"
   },
+  "check_status_permission_needed": {
+    "message": "Click to grant permission to check for broken bookmarks."
+  },
   "check_status_skipped": {
     "message": "照合できません。"
   },

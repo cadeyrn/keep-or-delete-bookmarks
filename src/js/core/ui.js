@@ -37,6 +37,29 @@ const ui = {
    */
   init () {
     browser.runtime.sendMessage({ message : 'collect' });
+    ui.setupPermissionGrantHandler();
+  },
+
+  /**
+   * Set up the listener for the link to grant the permission for the broken bookmark check.
+   *
+   * @returns {void}
+   */
+  setupPermissionGrantHandler () {
+    elStatusText.onclick = async () => {
+      if (elStatusText.classList.contains('permission-needed')) {
+        const granted = await browser.permissions.request({
+          origins : ['<all_urls>']
+        });
+
+        if (granted) {
+          browser.runtime.sendMessage({
+            message : 'recheck-bookmark',
+            id : elBookmarkId.textContent
+          });
+        }
+      }
+    };
   },
 
   /**
@@ -96,7 +119,13 @@ const ui = {
    * @returns {void}
    */
   handleResponse (response) {
-    if (response.message === 'confirmations') {
+    if (response.message === 'permission-change') {
+      browser.runtime.sendMessage({
+        message : 'recheck-bookmark',
+        id : elBookmarkId.textContent
+      });
+    }
+    else if (response.message === 'confirmations') {
       ui.confirmations = response.confirmations;
 
       if (response.confirmations) {
@@ -154,22 +183,32 @@ const ui = {
       elButtonWrapper.querySelector('[data-action="skip-bookmark"]').setAttribute('disabled', 'true');
     }
     else if (response.message === 'update-bookmark-status') {
-      if (response.status === 'success') {
+      if (response.status === 'permission-needed') {
+        elStatusIndicator.classList.add('failure');
+        elStatusIndicator.classList.remove('success');
+        elStatusText.classList.add('permission-needed');
+        elStatusText.textContent = browser.i18n.getMessage('check_status_permission_needed');
+      }
+      else if (response.status === 'success') {
         elStatusIndicator.classList.add('success');
         elStatusIndicator.classList.remove('failure');
+        elStatusText.classList.remove('permission-needed');
         elStatusText.textContent = browser.i18n.getMessage('check_status_success');
       }
       else if (response.status === 'failure') {
         elStatusIndicator.classList.add('failure');
         elStatusIndicator.classList.remove('success');
+        elStatusText.classList.remove('permission-needed');
         elStatusText.textContent = browser.i18n.getMessage('check_status_failure');
       }
       else if (response.status === 'skip') {
         elStatusIndicator.classList.remove('success', 'failure');
+        elStatusText.classList.remove('permission-needed');
         elStatusText.textContent = browser.i18n.getMessage('check_status_skipped');
       }
       else {
         elStatusIndicator.classList.remove('success', 'failure');
+        elStatusText.classList.remove('permission-needed');
         elStatusText.textContent = '…';
       }
     }

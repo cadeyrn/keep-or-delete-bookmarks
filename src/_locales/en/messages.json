@@ -23,6 +23,9 @@
   "check_status_failure": {
     "message": "The bookmark may be broken."
   },
+  "check_status_permission_needed": {
+    "message": "Click to grant permission to check for broken bookmarks."
+  },
   "check_status_skipped": {
     "message": "No check possible."
   },

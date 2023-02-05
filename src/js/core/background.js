@@ -60,6 +60,13 @@ const kodb = {
   CHECK_STATUS_FAILURE : 'failure',
 
   /**
+   * Status code for a broken bookmark.
+   *
+   * @type {string}
+   */
+  CHECK_STATUS_PERMISSION_NEEDED : 'permission-needed',
+
+  /**
    * Status code if a bookmark can not be checked.
    *
    * @type {string}
@@ -93,6 +100,17 @@ const kodb = {
    * @type {Array.<Object>}
    */
   additionalData : [],
+
+  /**
+   * Fired when the permission to access all website data is granted or revoked.
+   *
+   * @returns {void}
+   */
+  onPermissionChanged () {
+    browser.runtime.sendMessage({
+      message : 'permission-change'
+    });
+  },
 
   /**
    * Fired when a bookmark is deleted.
@@ -160,6 +178,11 @@ const kodb = {
     else if (response.message === 'check-confirmations-state') {
       const { confirmations } = await browser.storage.local.get({ confirmations : true });
       browser.runtime.sendMessage({ message : 'confirmations', confirmations : confirmations });
+    }
+    else if (response.message === 'recheck-bookmark') {
+      const bookmarks = await kodb.getBookmarks();
+      const bookmark = bookmarks[kodb.getIndexById(response.id)];
+      kodb.checkForBrokenBookmark(bookmark);
     }
     else if (response.message === 'delete') {
       browser.bookmarks.remove(response.id);
@@ -378,6 +401,14 @@ const kodb = {
    * @returns {void}
    */
   async checkForBrokenBookmark (bookmark) {
+    const granted = await browser.permissions.contains({ origins : ['<all_urls>'] });
+
+    if (!granted) {
+      browser.runtime.sendMessage({ message : 'update-bookmark-status', status : kodb.CHECK_STATUS_PERMISSION_NEEDED });
+
+      return;
+    }
+
     browser.runtime.sendMessage({ message : 'update-bookmark-status', status : kodb.CHECK_STATUS_AWAIT });
 
     if (kodb.CHECK_USE_SKIP_LIST && kodb.CHECK_SKIP_LIST.some((i) => new RegExp('\\b' + i + '\\b').test(bookmark.url))) {
@@ -443,6 +474,8 @@ const kodb = {
   }
 };
 
+browser.permissions.onAdded.addListener(kodb.onPermissionChanged);
+browser.permissions.onRemoved.addListener(kodb.onPermissionChanged);
 browser.bookmarks.onRemoved.addListener(kodb.onBookmarkRemoved);
 browser.action.onClicked.addListener(kodb.openUserInterface);
 browser.runtime.onMessage.addListener(kodb.handleResponse);

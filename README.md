@@ -79,11 +79,6 @@ Keep or Delete Bookmarks needs several permissions to work properly.
 
 Keep or Delete Bookmarks does not work without the following permissions:
 
-##### access your data for all sites
-
-The add-on checks the bookmarks by sending a request to the appropriate URLs. This cannot work without the permission
-to access these sites.
-
 ##### access browser tabs
 
 The permission to access the browser tabs is needed so that Keep or Delete Bookmarks can jump to the already opened
@@ -93,6 +88,13 @@ user interface if the user interface is already opened in another tab and you cl
 
 You installed Keep or Delete Bookmarks to show and remove bookmarks, so it should be clear why the permission is needed
 to read and modify your bookmarks.
+
+#### optional permissions
+
+##### access your data for all sites
+
+The add-on checks the bookmarks by sending a request to the appropriate URLs. This cannot work without the permission
+to access these sites. Keep or Delete Bookmarks asks at runtime for this permission if you want to execute this check.
 
 #### silent permissions
 

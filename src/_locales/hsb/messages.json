@@ -23,6 +23,9 @@
   "check_status_failure": {
     "message": "Zapołožka je snano zmylna."
   },
+  "check_status_permission_needed": {
+    "message": "Klikńće, zo byšće prawo za pytanje za defektnymi zapołožkami dał."
+  },
   "check_status_skipped": {
     "message": "Žane přepruwowanje móžne."
   },

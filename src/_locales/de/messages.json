@@ -23,6 +23,9 @@
   "check_status_failure": {
     "message": "Das Lesezeichen ist möglicherweise fehlerhaft."
   },
+  "check_status_permission_needed": {
+    "message": "Klicken, um Berechtigung zur Prüfung auf defekte Lesezeichen zu erteilen."
+  },
   "check_status_skipped": {
     "message": "Keine Überprüfung möglich."
   },

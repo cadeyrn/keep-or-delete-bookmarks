@@ -421,6 +421,16 @@ button.action-btn:hover::before {
   background-color: var(--color-red-dark);
 }
 
+#bookmark-status .permission-needed {
+  color: var(--color-red);
+  cursor: pointer;
+  transition: color ease 250ms;
+}
+
+#bookmark-status .permission-needed:hover {
+  color: var(--color-red-dark);
+}
+
 #bookmark-date-added {
   margin-top: 10px;
   font-size: 14px;

@@ -23,6 +23,9 @@
   "check_status_failure": {
     "message": "Cytańske znamje jo snaź zmólkate."
   },
+  "check_status_permission_needed": {
+    "message": "Klikniśo, aby dał pšawo za pytanje defektnymi cytańskimi znamjenjami."
+  },
   "check_status_skipped": {
     "message": "Žedno pśeglědanje móžne."
   },
