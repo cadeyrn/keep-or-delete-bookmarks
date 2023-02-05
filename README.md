@@ -109,8 +109,8 @@ The storage permission is needed so that Keep or Delete Bookmarks can remember w
 
 ## Compatibility
 
-**Keep or Delete Bookmarks is a WebExtension and compatible with Firefox Browser 68 and higher (Firefox Browser 109 or
-higher is required for the latest version of Keep or Delete Bookmarks).**
+Keep or Delete Bookmarks is a WebExtension and compatible with Firefox Browser 68 and higher (Firefox Browser 109 or
+higher is required for the latest version of Keep or Delete Bookmarks).
 
 ## Download
 
