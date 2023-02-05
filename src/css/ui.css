@@ -89,10 +89,6 @@ main {
   padding: 30px 15px;
 }
 
-.modal-dialog input {
-  width: 100%;
-}
-
 .modal-dialog aside {
   padding: 15px;
   background-color: var(--color-body-background);
