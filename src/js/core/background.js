@@ -95,13 +95,6 @@ const kodb = {
   additionalData : [],
 
   /**
-   * Stack of bookmark IDs, gets populated when a new bookmark is displayed. Used for showing previous bookmark.
-   *
-   * @type {Array.<string>}
-   */
-  historyStack : [],
-
-  /**
    * Fired when a bookmark is deleted.
    *
    * @param {int} id - id of the bookmark that was deleted
@@ -158,9 +151,15 @@ const kodb = {
       browser.runtime.sendMessage({ message : 'confirmations', confirmations : confirmations });
 
       await kodb.collectAllBookmarks();
-      kodb.showNextBookmark(null);
+      await kodb.showNextBookmark(null);
 
+      // start with an empty stack
+      browser.storage.local.set({ stack : [] });
       browser.runtime.sendMessage({ message : 'disable-previous-button' });
+    }
+    else if (response.message === 'check-confirmations-state') {
+      const { confirmations } = await browser.storage.local.get({ confirmations : true });
+      browser.runtime.sendMessage({ message : 'confirmations', confirmations : confirmations });
     }
     else if (response.message === 'delete') {
       browser.bookmarks.remove(response.id);
@@ -210,6 +209,19 @@ const kodb = {
     path.pop();
 
     return kodb.additionalData;
+  },
+
+  /**
+   * Returns the collected bookmarks.
+   *
+   * @returns {Array.<Object>} - an array with the collected bookmarks
+   */
+  async getBookmarks () {
+    if (kodb.collectedBookmarks.length === 0) {
+      await kodb.collectAllBookmarks();
+    }
+
+    return kodb.collectedBookmarks;
   },
 
   /**
@@ -268,16 +280,20 @@ const kodb = {
    *
    * @returns {void}
    */
-  showPreviousBookmark () {
-    const previousBookmarkId = kodb.historyStack.pop();
+  async showPreviousBookmark () {
+    const { stack } = await browser.storage.local.get({ stack : [] });
+    const previousBookmarkId = stack.pop();
+
+    browser.storage.local.set({ stack : stack });
 
     if (previousBookmarkId) {
-      const previousBookmark = kodb.collectedBookmarks[kodb.getIndexById(previousBookmarkId)];
+      const bookmarks = await kodb.getBookmarks();
+      const previousBookmark = bookmarks[kodb.getIndexById(previousBookmarkId)];
       browser.runtime.sendMessage({ message : 'show-bookmark', bookmark : previousBookmark });
       kodb.checkForBrokenBookmark(previousBookmark);
     }
 
-    if (kodb.historyStack.length === 0) {
+    if (stack.length === 0) {
       browser.runtime.sendMessage({ message : 'disable-previous-button' });
     }
   },
@@ -290,19 +306,22 @@ const kodb = {
    *
    * @returns {void}
    */
-  showNextBookmark (id) {
-    const { length } = kodb.collectedBookmarks;
+  async showNextBookmark (id) {
+    const bookmarks = await kodb.getBookmarks();
+    const { length } = bookmarks;
     let nextBookmarkId = id;
     let nextBookmark = null;
 
     if (length > 1) {
       if (id) {
-        kodb.historyStack.push(id);
+        const { stack } = await browser.storage.local.get({ stack : [] });
+        stack.push(id);
+        browser.storage.local.set({ stack : stack });
       }
 
       while (id === nextBookmarkId) {
         const idx = Math.floor(Math.random() * length);
-        nextBookmark = kodb.collectedBookmarks[idx];
+        nextBookmark = bookmarks[idx];
 
         if (nextBookmark) {
           nextBookmarkId = nextBookmark.id;
@@ -310,7 +329,7 @@ const kodb = {
       }
     }
     else {
-      nextBookmark = kodb.collectedBookmarks[0];
+      nextBookmark = bookmarks[0];
       browser.runtime.sendMessage({ message : 'disable-skip-button' });
     }
 
@@ -326,8 +345,9 @@ const kodb = {
    *
    * @returns {void}
    */
-  removeFromCollectedBookmarks (id) {
-    kodb.collectedBookmarks.splice(kodb.getIndexById(id), 1);
+  async removeFromCollectedBookmarks (id) {
+    const bookmarks = await kodb.getBookmarks();
+    bookmarks.splice(kodb.getIndexById(id), 1);
     delete kodb.additionalData[id];
   },
 
@@ -424,11 +444,14 @@ const kodb = {
 };
 
 browser.bookmarks.onRemoved.addListener(kodb.onBookmarkRemoved);
-browser.browserAction.onClicked.addListener(kodb.openUserInterface);
+browser.action.onClicked.addListener(kodb.openUserInterface);
 browser.runtime.onMessage.addListener(kodb.handleResponse);
 
-browser.menus.create({
-  title : browser.i18n.getMessage('extension_name'),
-  contexts : ['tools_menu'],
-  command : '_execute_browser_action'
+browser.runtime.onInstalled.addListener(() => {
+  browser.menus.create({
+    id : 'kodb-tools-menu-entry',
+    title : browser.i18n.getMessage('extension_name'),
+    contexts : ['tools_menu'],
+    command : '_execute_action'
+  });
 });

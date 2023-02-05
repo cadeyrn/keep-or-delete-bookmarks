@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "__MSG_extension_name__",
   "version": "3.0.0",
   "description": "__MSG_extension_description__",
@@ -13,24 +13,29 @@
   "background": {
     "scripts": ["js/core/background.js"]
   },
-  "browser_action": {
+  "action": {
     "browser_style": false,
     "default_icon": "images/icon.svg",
     "default_title": "__MSG_extension_name__"
   },
   "permissions": [
-    "<all_urls>",
     "bookmarks",
     "menus",
     "storage",
     "tabs"
   ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self';"
+  },
   "options_ui": {
     "page": "html/options.html",
     "open_in_tab": true
   },
   "default_locale": "en",
-  "applications": {
+  "browser_specific_settings": {
     "gecko": {
       "id": "keep-or-delete-bookmarks@agenedia.com",
       "strict_min_version": "109.0"

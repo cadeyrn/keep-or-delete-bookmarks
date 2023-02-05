@@ -253,6 +253,8 @@ const ui = {
    * @returns {void}
    */
   async deleteBookmark (id, title) {
+    browser.runtime.sendMessage({ message : 'check-confirmations-state' });
+
     if (ui.confirmations) {
       await ui.confirm(title);
     }

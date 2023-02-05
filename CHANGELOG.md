@@ -2,6 +2,8 @@
 
 #### Notable Changes
 
+- **Keep or Delete Bookmarks now uses Manifest v3**, fixes
+  [#44](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/44)
 - bumped the minimum required Firefox version to Firefox 109, fixes
   [#55](https://github.com/cadeyrn/keep-or-delete-bookmarks/issues/55)
 - removed testpilot.firefox.com from internal skip list because this domain is not part of
