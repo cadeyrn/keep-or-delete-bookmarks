@@ -2,6 +2,11 @@
 
 <img src="src/images/logo-large.png" alt="Logo" width="790" border="0" />
 
+## Support the development
+
+**Please consider making [a donation](https://www.paypal.com/paypalme/agenedia/) to support the further development of
+Keep or Delete Bookmarks. Thank you very much!**
+
 ## Description
 
 **Cleaning up bookmarks is boring. The Firefox add-on Keep or Delete Bookmarks brings some fun to this task by
@@ -86,7 +91,7 @@ user interface if the user interface is already opened in another tab and you cl
 
 ##### read and modify bookmarks
 
-You installed Keep or Delete Bookmarks to show and remove bookmarks so it should be clear why the permission is needed
+You installed Keep or Delete Bookmarks to show and remove bookmarks, so it should be clear why the permission is needed
 to read and modify your bookmarks.
 
 #### silent permissions
@@ -104,7 +109,8 @@ The storage permission is needed so that Keep or Delete Bookmarks can remember w
 
 ## Compatibility
 
-Keep or Delete Bookmarks requires at least Firefox 91. There is no support for older versions of Firefox.
+**Keep or Delete Bookmarks is a WebExtension and compatible with Firefox Browser 68 and higher (Firefox Browser 109 or
+higher is required for the latest version of Keep or Delete Bookmarks).**
 
 ## Download
 
