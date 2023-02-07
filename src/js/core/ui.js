@@ -181,6 +181,9 @@ const ui = {
     else if (response.message === 'disable-previous-button') {
       elPreviousBookmarkBtn.setAttribute('disabled', 'true');
     }
+    else if (response.message === 'enable-skip-button') {
+      elButtonWrapper.querySelector('[data-action="skip-bookmark"]').removeAttribute('disabled');
+    }
     else if (response.message === 'disable-skip-button') {
       elButtonWrapper.querySelector('[data-action="skip-bookmark"]').setAttribute('disabled', 'true');
     }

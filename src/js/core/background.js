@@ -113,6 +113,25 @@ const kodb = {
   },
 
   /**
+   * Fired when a bookmark changed.
+   *
+   * @returns {void}
+   */
+  async onBookmarkChanged () {
+    // refresh the collection if a new bookmark was added or an existing bookmark was changed
+    await kodb.collectAllBookmarks();
+
+    if (kodb.collectedBookmarks.length === 1) {
+      // in case a new bookmark was added, replace the empty state page with the only bookmark
+      kodb.showNextBookmark(null);
+    }
+    else {
+      // we have at least two bookmarks, so make sure that the skip button is enabled
+      browser.runtime.sendMessage({ message : 'enable-skip-button' });
+    }
+  },
+
+  /**
    * Fired when a bookmark is deleted.
    *
    * @param {int} id - id of the bookmark that was deleted
@@ -120,10 +139,35 @@ const kodb = {
    * @returns {void}
    */
   async onBookmarkRemoved (id) {
+    const { whitelist, stack } = await browser.storage.local.get({ whitelist : {}, stack : [] });
+
     // remove bookmark from the whitelist
-    const { whitelist } = await browser.storage.local.get({ whitelist : {} });
-    delete whitelist[id];
-    browser.storage.local.set({ whitelist : whitelist });
+    if (whitelist[id]) {
+      delete whitelist[id];
+      browser.storage.local.set({ whitelist : whitelist });
+    }
+
+    // read bookmarks again to make sure that the removed bookmark is no longer available in the collection
+    await kodb.collectAllBookmarks();
+    await kodb.showNextBookmark(null);
+
+    // show the empty state if there are no remaining bookmarks
+    if (kodb.collectedBookmarks.length === 0) {
+      browser.runtime.sendMessage({ message : 'show-bookmark' });
+    }
+    // make sure that neither the previous nor the skip button is available if there are not at least two bookmarks
+    else if (kodb.collectedBookmarks.length < 2) {
+      browser.runtime.sendMessage({ message : 'disable-previous-button' });
+      browser.runtime.sendMessage({ message : 'disable-skip-button' });
+    }
+
+    // remove bookmark from the stack
+    stack.splice(stack.indexOf(id), 1);
+    browser.storage.local.set({ stack : stack });
+
+    if (stack.length === 0) {
+      browser.runtime.sendMessage({ message : 'disable-previous-button' });
+    }
   },
 
   /**
@@ -185,10 +229,8 @@ const kodb = {
       kodb.checkForBrokenBookmark(bookmark);
     }
     else if (response.message === 'delete') {
+      // let's only remove the bookmark here, the onRemoved handler will do everything else
       browser.bookmarks.remove(response.id);
-
-      kodb.removeFromCollectedBookmarks(response.id);
-      kodb.showNextBookmark(response.id);
     }
     else if (response.message === 'keep') {
       kodb.addToWhitelist(response.id, response.title, response.url, response.path);
@@ -476,6 +518,7 @@ const kodb = {
 
 browser.permissions.onAdded.addListener(kodb.onPermissionChanged);
 browser.permissions.onRemoved.addListener(kodb.onPermissionChanged);
+browser.bookmarks.onChanged.addListener(kodb.onBookmarkChanged);
 browser.bookmarks.onRemoved.addListener(kodb.onBookmarkRemoved);
 browser.action.onClicked.addListener(kodb.openUserInterface);
 browser.runtime.onMessage.addListener(kodb.handleResponse);
