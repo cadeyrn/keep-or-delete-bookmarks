@@ -24,7 +24,7 @@
     "message": "De favoriet kan stuk zijn."
   },
   "check_status_permission_needed": {
-    "message": "Click to grant permission to check for broken bookmarks."
+    "message": "Klik om toestemming te geven om te controleren op favoriten die stuk zijn."
   },
   "check_status_skipped": {
     "message": "Check is niet mogelijk."
