@@ -1,4 +1,4 @@
-### Version 3.0.0 (Work in Progress)
+### Version 3.0.0 (2023-02-08)
 
 #### Notable Changes
 
@@ -43,7 +43,8 @@
 - updated stylelint-order from version 5.0.0 to 6.0.1
 - updated webext from version 6.6.0 to 7.5.0
 
-[All Changes](https://github.com/cadeyrn/keep-or-delete-bookmarks/compare/v2.0.1...master)
+[All Changes](https://github.com/cadeyrn/keep-or-delete-bookmarks/compare/v2.0.1...v3.0.0)<br />
+[Download Signed WebExtension](https://addons.mozilla.org/en-US/firefox/addon/keep-or-delete-bookmarks/versions/?page=1#version-3.0.0)
 
 ---
 
@@ -147,7 +148,7 @@
 #### Features of the first version
 
 - Keep or Delete Bookmarks always shows one random bookmark
-- You can keep or delete the bookmark, you can open the bookmark in a new tab or you can defer the decision
+- You can keep or delete the bookmark, you can open the bookmark in a new tab, or you can defer the decision
 - After an action Keep or Delete Bookmarks shows you the next bookmark
 - Keep or Delete Bookmark makes sure that you never see the same bookmark two times in a row
 - There is a confirmation dialog when you press the delete button
